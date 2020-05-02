@@ -1,6 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 
-const Home = () => {
+type Props = {}
+
+const index: React.FunctionComponent<Props> = props => {
   return (
     <div>
       {
@@ -10,4 +12,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default index

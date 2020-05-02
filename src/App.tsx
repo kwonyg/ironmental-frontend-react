@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Switch } from 'react-router-dom'
-// import 'swiper/swiper.scss'
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from './pages/Home'
 
