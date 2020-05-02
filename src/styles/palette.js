@@ -1,22 +1,22 @@
-import {
-  purple,
-  blue,
-  /* red,
-  volcano,
-  gold,
-  yellow,
-  lime,
-  green,
-  cyan,
-  geekblue,
-  magenta,
-  grey, */
-} from '@ant-design/colors'
+const purple = {
+  primary: '#A593E0',
+}
 
-console.log(purple) // ['#E6F7FF', '#BAE7FF', '#91D5FF', ''#69C0FF', '#40A9FF', '#1890FF', '#096DD9', '#0050B3', '#003A8C', '#002766']
-console.log(purple.primary) // '#1890FF'
+const grey = {
+  primary: '#E0E3DA',
+}
+
+const white = {
+  primary: '#FFFFF3',
+}
+
+const black = {
+  primary: '#566270',
+}
 
 export const colors = {
   purple,
-  blue,
+  grey,
+  white,
+  black,
 }
