@@ -7,7 +7,8 @@ const grey = {
 }
 
 const white = {
-  primary: '#FFFFF3',
+  primary: '#FFF',
+  1: '#FFFFF3',
 }
 
 const black = {
