@@ -2,6 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { Layout } from 'antd'
 import Header from '../components/Header'
+import styled from 'styled-components'
 
 type Props = {
   component: React.FC
@@ -14,9 +15,9 @@ const DefaultLayout: React.FC<Props> = ({ component: Component, ...rest }) => {
       render={matchProps => (
         <Layout>
           <Header />
-          <Content>
+          <StyledContent>
             <Component {...matchProps} {...rest} />
-          </Content>
+          </StyledContent>
         </Layout>
       )}
     />
@@ -24,5 +25,9 @@ const DefaultLayout: React.FC<Props> = ({ component: Component, ...rest }) => {
 }
 
 const { Content } = Layout
+
+const StyledContent = styled(Content)`
+  margin-top: 64px;
+`
 
 export default DefaultLayout

@@ -1,17 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
+import { routePath } from '../../constants'
+import { colors } from '../../styles/palette'
 const Navigation: React.FC = () => {
   return (
     <Nav>
-      <Logo className="logo">IronMental</Logo>
+      <Logo className="logo">
+        <StyledLink to={routePath.HOME}>IronMental</StyledLink>
+      </Logo>
       <Menu>
         <MenuItem>
-          <ItemLink to="/">홈</ItemLink>
+          <StyledLink to={routePath.HOME}>홈</StyledLink>
         </MenuItem>
         <MenuItem>
-          <ItemLink to="/">아카이브</ItemLink>
+          <StyledLink to={routePath.ARCHIVE}>아카이브</StyledLink>
         </MenuItem>
       </Menu>
     </Nav>
@@ -21,6 +24,7 @@ const Navigation: React.FC = () => {
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid ${colors.grey.primary};
 `
 const Logo = styled.div`
   color: #000;
@@ -37,7 +41,7 @@ const MenuItem = styled.li`
   margin: 0 10px;
 `
 
-const ItemLink = styled(Link)`
+const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000;
 `
