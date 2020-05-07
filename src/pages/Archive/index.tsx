@@ -1,14 +1,9 @@
 import * as React from 'react'
-
+import ArticleList from './ArticleList'
 const Archive: React.FC = () => {
   return (
     <section>
-      이것은 아카이브야이것은 아카이브야이것은 아카이브야이것은 아카이브야이것은
-      아카이브야이것은 아카이브야이것은 아카이브야이것은 아카이브야이것은
-      아카이브야이것은 아카이브야이것은 아카이브야이것은 아카이브야이것은
-      아카이브야이것은 아카이브야이것은 아카이브야이것은 아카이브야이것은
-      아카이브야이것은 아카이브야이것은 아카이브야이것은 아카이브야이것은
-      아카이브야이것은 아카이브야이것은 아카이브야이것은 아카이브야
+      <ArticleList />
     </section>
   )
 }

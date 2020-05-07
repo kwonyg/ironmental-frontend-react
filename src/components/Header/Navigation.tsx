@@ -3,21 +3,24 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { routePath } from '../../constants'
 import { colors } from '../../styles/palette'
+import Responsive from '../../layouts/Responsive'
 const Navigation: React.FC = () => {
   return (
-    <Nav>
-      <Logo className="logo">
-        <StyledLink to={routePath.HOME}>IronMental</StyledLink>
-      </Logo>
-      <Menu>
-        <MenuItem>
-          <StyledLink to={routePath.HOME}>홈</StyledLink>
-        </MenuItem>
-        <MenuItem>
-          <StyledLink to={routePath.ARCHIVE}>아카이브</StyledLink>
-        </MenuItem>
-      </Menu>
-    </Nav>
+    <Responsive>
+      <Nav>
+        <Logo className="logo">
+          <StyledLink to={routePath.HOME}>IronMental</StyledLink>
+        </Logo>
+        <Menu>
+          <MenuItem>
+            <StyledLink to={routePath.HOME}>홈</StyledLink>
+          </MenuItem>
+          <MenuItem>
+            <StyledLink to={routePath.ARCHIVE}>아카이브</StyledLink>
+          </MenuItem>
+        </Menu>
+      </Nav>
+    </Responsive>
   )
 }
 
