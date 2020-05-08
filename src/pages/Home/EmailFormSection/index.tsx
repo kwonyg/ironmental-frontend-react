@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons'
-
+import { fadeInUp } from '../../../styles/animations'
 const FormSection: React.FC = () => {
   return (
     <Section>
@@ -33,6 +33,10 @@ const Section = styled.section`
 `
 const Article = styled.article`
   text-align: center;
+
+  /* TODO: H1과 중복 제거 */
+  /* Animation */
+  ${fadeInUp(0.5)}
 `
 
 const H1 = styled.h1`
@@ -40,6 +44,8 @@ const H1 = styled.h1`
   word-break: keep-all;
   text-align: center;
   font-size: 1.8rem;
+
+  ${fadeInUp(0)}
 `
 
 const ButtonContainer = styled.div`
