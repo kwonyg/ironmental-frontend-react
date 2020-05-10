@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button } from 'antd'
-import { DownloadOutlined } from '@ant-design/icons'
+import { MailOutlined } from '@ant-design/icons'
 import { fadeInUp } from '../../../styles/animations'
+import EmilFormModal from './EmilFormModal'
+
 const FormSection: React.FC = () => {
+  const [visibleModal, setVisibleModal] = useState(false)
+
+  const showModal = () => {
+    setVisibleModal(true)
+  }
+
+  const closeModal = () => {
+    setVisibleModal(false)
+  }
+
   return (
     <Section>
       <H1>
@@ -18,11 +30,15 @@ const FormSection: React.FC = () => {
         <Button
           type="primary"
           shape="round"
-          icon={<DownloadOutlined />}
+          icon={<MailOutlined />}
           size="large"
+          onClick={showModal}
         >
           구독하기
         </Button>
+        {visibleModal && (
+          <EmilFormModal /* visible={visibleModal} */ closeModal={closeModal} />
+        )}
       </ButtonContainer>
     </Section>
   )
