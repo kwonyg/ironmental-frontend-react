@@ -25,6 +25,7 @@ const TechIntroSection: React.FC = props => {
 }
 
 const Section = styled.section`
+  min-height: 148px;
   text-align: center;
 `
 

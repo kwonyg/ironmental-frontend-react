@@ -13,7 +13,9 @@ const ArticleListItem: React.FunctionComponent<ArticleProps> = ({
 
   return (
     <List.Item
-      extra={<img width={272} alt="콘텐츠 대표 이미지" src={imgUrl} />}
+      extra={
+        <img width={200} height={200} alt="콘텐츠 대표 이미지" src={imgUrl} />
+      }
     >
       <List.Item.Meta title={<a href={href}>{title}</a>} />
       <TagLists tags={tags} />
