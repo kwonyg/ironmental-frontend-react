@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { routePath } from '../../constants'
-import { colors } from '../../styles/palette'
+
 import Responsive from '../../layouts/Responsive'
 const Navigation: React.FC = () => {
   return (
@@ -27,7 +27,6 @@ const Navigation: React.FC = () => {
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid ${colors.grey.primary};
 `
 const Logo = styled.div`
   color: #000;

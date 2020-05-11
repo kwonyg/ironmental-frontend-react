@@ -8,7 +8,7 @@ const index: React.FunctionComponent<Props> = props => {
   return (
     <>
       <EmailFormSection />
-      {/* <PhoneIntroSection /> */}
+      <PhoneIntroSection />
       <TechIntroSection />
     </>
   )
