@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TagLists from './TagList'
+import TagLists from '../../components/TagList'
 import { List } from 'antd'
 import { Article } from '../../types'
 

@@ -51,6 +51,7 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
       </Description>
       <InputContainer>
         <StyledInput
+          type="email"
           iserror={iserror ? true : false}
           placeholder="E-mail"
           size="large"

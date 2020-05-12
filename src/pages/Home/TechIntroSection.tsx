@@ -7,14 +7,13 @@ import { useAnimationTrigger } from '../../hooks'
 // interface Props {}
 
 const TechIntroSection: React.FC = props => {
+  const observerEl = useRef<HTMLHeadingElement>(null)
+  const animationTrigger = useAnimationTrigger(observerEl)
   const TechIcons = icons.map((icon, index) => (
     <Col span={6} key={icon.title}>
       <Img src={icon.src} alt={icon.alt} delay={0.2 * index} />
     </Col>
   ))
-
-  const observerEl = useRef<HTMLHeadingElement>(null)
-  const animationTrigger = useAnimationTrigger(observerEl)
 
   return (
     <Section>
@@ -26,7 +25,12 @@ const TechIntroSection: React.FC = props => {
 
 const Section = styled.section`
   min-height: 148px;
+  padding: 100px 0;
   text-align: center;
+  /* & > h2 {
+    font-size: 48px;
+    font-weight: 600;
+  } */
 `
 
 const Img = styled.img<{ delay: number }>`

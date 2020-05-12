@@ -19,7 +19,7 @@ const FormSection: React.FC = () => {
   return (
     <Section>
       <H1>
-        매주 개발 상식 메일링 서비스
+        개발 상식 메일링 서비스
         <br /> 아이언멘탈
       </H1>
       <Article>
@@ -56,10 +56,8 @@ const Article = styled.article`
 `
 
 const H1 = styled.h1`
-  font-weight: 600;
   word-break: keep-all;
   text-align: center;
-  font-size: 1.8rem;
 
   ${fadeInUp(0)}
 `
