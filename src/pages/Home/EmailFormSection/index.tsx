@@ -19,8 +19,9 @@ const FormSection: React.FC = () => {
   return (
     <Section>
       <H1>
-        개발 상식 메일링 서비스
-        <br /> 아이언멘탈
+        <span>개발 상식 메일링 서비스</span>
+        <br />
+        <span>아이언멘탈</span>
       </H1>
       <Article>
         아이언 멘탈은 다양한 개발상식을 가볍게 접하고 싶은 이용자에게 매주
@@ -59,6 +60,16 @@ const H1 = styled.h1`
   word-break: keep-all;
   text-align: center;
 
+  /* 개발 상식 메일링 서비스 문구*/
+  span:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  /* 아이언멘탈 문구*/
+  span:nth-child(3) {
+    font-size: 3.5rem;
+    line-height: 3rem;
+  }
   ${fadeInUp(0)}
 `
 
