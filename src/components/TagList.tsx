@@ -6,7 +6,7 @@ interface Props {
   tags: string[]
 }
 
-const TagList: React.FunctionComponent<Props> = ({ tags }) => {
+const TagList: React.FC<Props> = ({ tags }) => {
   return (
     <Ul>
       {tags.map((tag, index) => (

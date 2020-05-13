@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Responsive from './Responsive'
 
 type Props = {
-  component: React.FC
+  component: React.FC<any>
   [rest: string]: any
 }
 const DefaultLayout: React.FC<Props> = ({ component: Component, ...rest }) => {

@@ -3,9 +3,8 @@ import EmailFormSection from './EmailFormSection'
 import PhoneIntroSection from './PhoneIntroSection'
 import TechIntroSection from './TechIntroSection'
 import ArchiveIntroSection from './ArchiveIntroSection/'
-type Props = {}
 
-const index: React.FunctionComponent<Props> = props => {
+const index: React.FC = () => {
   return (
     <>
       <EmailFormSection />

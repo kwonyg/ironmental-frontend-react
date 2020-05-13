@@ -4,7 +4,7 @@ import { images } from '../../assets/images'
 import styled from 'styled-components'
 // interface Props {}
 
-const PhoneIntroSection: React.FunctionComponent = () => {
+const PhoneIntroSection: React.FC = () => {
   return (
     <Section>
       <Img src={images[0].src} alt="" />

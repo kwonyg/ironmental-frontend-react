@@ -6,9 +6,7 @@ import { Article } from '../../types'
 type ArticleProps = {
   article: Article
 }
-const ArticleListItem: React.FunctionComponent<ArticleProps> = ({
-  article,
-}) => {
+const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
   const { title, imgUrl, href, tags, content } = article
 
   return (
