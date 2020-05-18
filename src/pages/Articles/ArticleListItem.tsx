@@ -25,9 +25,9 @@ const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
 }
 
 const ListItem = styled(List.Item)`
-  margin: 10px 0;
+  margin: -1px 0;
   cursor: pointer;
-  border-radius: 10px;
+  border-top: 1px solid #f0f0f0;
 
   &:hover {
     -webkit-box-shadow: 3px 1px 74px -19px rgba(0, 0, 0, 0.2);
@@ -39,7 +39,6 @@ const ListItem = styled(List.Item)`
 
 const ItemMeta = styled(ListItem.Meta)`
   margin: 0;
-
   & h4 {
     margin: 0 !important;
   }
@@ -50,6 +49,7 @@ const Description = styled.span`
 `
 
 const ItemLink = styled(Link)`
+  display: block;
   text-decoration: none;
   color: black;
 `

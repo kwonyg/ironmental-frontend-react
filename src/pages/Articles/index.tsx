@@ -1,11 +1,23 @@
 import * as React from 'react'
 import ArticleList from './ArticleList'
-const Archive: React.FC = () => {
+import SearchInput from './SearchInput'
+import styled from 'styled-components'
+const Articles: React.FC = () => {
   return (
-    <section>
+    <Section>
+      <SearchContainer>
+        <SearchInput />
+      </SearchContainer>
       <ArticleList />
-    </section>
+    </Section>
   )
 }
 
-export default Archive
+const Section = styled.section``
+
+const SearchContainer = styled.div`
+  margin: 30px 0;
+  text-align: right;
+`
+
+export default Articles

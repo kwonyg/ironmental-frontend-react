@@ -1,15 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DateUtils } from '../../utils/index'
 import TagList from '../../components/TagList'
-// interface Props {}
+import { Article } from '../../types'
 
-// TODO: 스타일링 진행하기
-const Article: React.FC = () => {
+// TODO: presentional 컴포넌트가 아닌 store에서 바로 가져오는 컴포넌트로 제작하기
+const ArticlePage: React.FC = () => {
+  // Mock
+  const article = {
+    id: '5cf1423357cd510271cd9289',
+    title: `Show HN: Zoom-CLI, an automated tool to change your Zoom virtual background`,
+    tags: ['web'],
+    text:
+      'CORS(Cross Origin Resource Sharing)현재 도메인 이외의 다른 도메인으로 리소스를 요청하는 경우 ex) SPA(Single Page Application) 보안 상의 이유로 브라우저는 CORS를 제한same origin policy',
+    articleLink: 'http://ant.design',
+    created: '2019-05-31T15:05:28.527Z',
+    updated: '2019-05-31T15:05:28.527Z',
+  }
+
+  const { id, title, tags, text, articleLink, created, updated } = article
+
   return (
     <Section>
       <Head>
-        <h1> 아티클 테스트 페이지</h1>
-        <Date>Nov. 13. 2020.</Date>
+        <H1>
+          <a href={articleLink}>{title}</a>
+        </H1>
+        <Date>{DateUtils.convertDate(created)}</Date>
+        <TagList tags={tags} />
       </Head>
       <main>이건 개 좋은 뉴스야</main>
     </Section>
@@ -22,9 +40,24 @@ const Section = styled.section`
   max-width: 690px;
 `
 const Head = styled.div`
-  margin-bottom: 60px;
+  margin: 60px 0;
 `
 
-const Date = styled.div``
+const H1 = styled.h1`
+  margin-bottom: 32px;
 
-export default Article
+  & a {
+    color: black;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+`
+
+const Date = styled.div`
+  margin: 10px 0;
+  font-size: 1rem;
+`
+
+export default ArticlePage
