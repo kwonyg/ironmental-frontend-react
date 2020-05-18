@@ -8,7 +8,7 @@ const ArchiveArticle: React.FC = () => {
   return (
     <Section>
       <div data-v-5fa65ed6="" data-v-7497ae06="">
-        <h1>아카이브 아티클 테스트 페이지</h1>
+        <h1> 아티클 테스트 페이지</h1>
         <h2>TODO: 스타일링 진행하기</h2>
         <h2 id="stackbasedvm">Stack based VM</h2>
         <p>
@@ -56,7 +56,7 @@ const ArchiveArticle: React.FC = () => {
         <p>
           <a href="https://blog.subnetzero.io/post/building-language-vm-part-01/">
             So You Want to Build a Language VM
-          </a>{' '}
+          </a>
         </p>
         <p>
           <a href="https://markfaction.wordpress.com/2012/07/15/stack-based-vs-register-based-virtual-machine-architecture-and-the-dalvik-vm/">

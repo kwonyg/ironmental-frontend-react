@@ -1,3 +1,3 @@
 export const HOME = '/'
-export const ARCHIVES = '/archives'
-export const ARCHIVE_ARTICLE = `${ARCHIVES}/:articleId`
+export const ARTICLES = '/articles'
+export const ARTICLE = `${ARTICLES}/:articleId`

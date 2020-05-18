@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { Tag } from 'antd'
 import { colors } from '../styles/palette'
+
 interface Props {
   tags: string[]
 }
@@ -27,16 +28,16 @@ const Ul = styled.ul`
 const Li = styled.li`
   list-style: none;
 
-  &:hover {
+  /* &:hover {
     cursor: pointer;
-  }
+  } */
 `
 
 const StyledTag = styled(Tag)`
-  &:hover {
+  /* &:hover {
     cursor: pointer;
     background-color: ${colors.grey.primary};
-  }
+  } */
 `
 
 export default TagList
