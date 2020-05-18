@@ -1,10 +1,11 @@
 export interface Article {
   id: string
   title: string
-  imgUrl: string
-  href: string
   tags: string[]
-  content: string
+  text: string
+  articleLink: string
+  created: string
+  updated: string
 }
 
 export interface ErrorInfo {

@@ -10,7 +10,7 @@ type ArticleProps = {
   article: Article
 }
 const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
-  const { id, title, /* imgUrl, href, */ tags, content } = article
+  const { id, title, tags, text } = article
   const linkTo = `${routePath.ARTICLES}/${id}`
 
   return (
@@ -18,7 +18,7 @@ const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
       <ItemLink to={linkTo}>
         <TagLists tags={tags} />
         <ItemMeta title={<Title>{title}</Title>} />
-        <Description>{content}</Description>
+        <Description>{text}</Description>
       </ItemLink>
     </ListItem>
   )

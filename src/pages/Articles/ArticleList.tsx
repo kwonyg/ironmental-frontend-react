@@ -7,97 +7,99 @@ const ArticleList: React.FC = () => {
   const listData = [
     {
       id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
       title: `CORS란 무엇인가요?`,
-      imgUrl:
-        'https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful-1/2048/5381_-_Web-512.png',
       tags: ['web'],
-      content:
+      text:
         'CORS(Cross Origin Resource Sharing)현재 도메인 이외의 다른 도메인으로 리소스를 요청하는 경우 ex) SPA(Single Page Application) 보안 상의 이유로 브라우저는 CORS를 제한same origin policy',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
     },
     {
       id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
       title: `Race Condition 이란?`,
-      imgUrl:
-        'https://cdn2.iconfinder.com/data/icons/logos-brands-4/24/logo_brand_brands_logos_linux-512.png',
       tags: ['os'],
-      content: '',
+      text: '',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
     },
     {
       id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
       title: `Show HN: Zoom-CLI, an automated tool to change your Zoom virtual background `,
-      imgUrl:
-        'https://www.veritis.com/wp-content/uploads/2015/06/Kubernetes-main-image.jpg',
       tags: ['kubernetes'],
-      content:
+      text:
         '원래 사용하는 기본 컨테이너의 기능을 확장하거나 강화하는 용도의 컨테이너를 추가하는 패턴 기본 컨테이너와 독립적으로 동작하는 별도의 컨테이너를 붙이는 패턴부가적인 공통 기능들은 사이드카 컨테이너를 추가해서 사용',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
     },
     {
       id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
       title: `고차 함수(Higher-Order Function)란 무엇인가요?`,
-      imgUrl: 'https://i.ytimg.com/vi/bThEbBcrfKE/maxresdefault.jpg',
-      tags: ['javascript', 'functional programming', 'haskell'],
-      content: '',
-    },
-    {
-      id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
-      title: `가상 돔(Virtual DOM)과 실제 DOM의 차이점이 무엇인가요?`,
-      imgUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-      tags: ['javascript', 'web', 'html'],
-      content:
-        'DOM: Document Object Model로 웹페이지를 자바스크립트로 제어하기 위한 문서 객체 모델을 의미합니다. 가상 돔(Virtual DOM) 자바스크립트 오브젝트 형식으로 되어있는 가상의 DOM 입니다. 가상으로 만든 돔과 기존의 돔과 비교하여 변화가 필요한 부분만 업데이트하기 위해 사용..',
-    },
-    {
-      id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
-      title: `	Show HN: Zoom-CLI, an automated tool to change your Zoom virtual background`,
-      imgUrl:
-        'https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful-1/2048/5381_-_Web-512.png',
-      tags: ['web'],
-      content:
-        'CORS(Cross Origin Resource Sharing)현재 도메인 이외의 다른 도메인으로 리소스를 요청하는 경우 ex) SPA(Single Page Application) 보안 상의 이유로 브라우저는 CORS를 제한same origin policy',
-    },
-    {
-      id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
-      title: `Race Condition 이란?`,
-      imgUrl:
-        'https://cdn2.iconfinder.com/data/icons/logos-brands-4/24/logo_brand_brands_logos_linux-512.png',
-      tags: ['os'],
-      content: '',
-    },
-    {
-      id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
-      title: `What is Sidecar pattern in k8s`,
-      imgUrl:
-        'https://www.veritis.com/wp-content/uploads/2015/06/Kubernetes-main-image.jpg',
       tags: ['kubernetes'],
-      content:
-        '원래 사용하는 기본 컨테이너의 기능을 확장하거나 강화하는 용도의 컨테이너를 추가하는 패턴 기본 컨테이너와 독립적으로 동작하는 별도의 컨테이너를 붙이는 패턴부가적인 공통 기능들은 사이드카 컨테이너를 추가해서 사용',
+      text: '',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
     },
     {
       id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
-      title: `Show HN: Run VSCode on iPhone and iPad`,
-      imgUrl: 'https://i.ytimg.com/vi/bThEbBcrfKE/maxresdefault.jpg',
-      tags: ['javascript', 'functional programming', 'haskell'],
-      content: '',
-    },
-    {
-      id: '5cf1423357cd510271cd9289',
-      href: 'http://ant.design',
       title: `가상 돔(Virtual DOM)과 실제 DOM의 차이점이 무엇인가요?`,
-      imgUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
       tags: ['javascript', 'web', 'html'],
-      content:
+      text:
         'DOM: Document Object Model로 웹페이지를 자바스크립트로 제어하기 위한 문서 객체 모델을 의미합니다. 가상 돔(Virtual DOM) 자바스크립트 오브젝트 형식으로 되어있는 가상의 DOM 입니다. 가상으로 만든 돔과 기존의 돔과 비교하여 변화가 필요한 부분만 업데이트하기 위해 사용..',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
+    },
+    {
+      id: '5cf1423357cd510271cd9289',
+      title: `Show HN: Zoom-CLI, an automated tool to change your Zoom virtual background`,
+      tags: ['web'],
+      text:
+        'CORS(Cross Origin Resource Sharing)현재 도메인 이외의 다른 도메인으로 리소스를 요청하는 경우 ex) SPA(Single Page Application) 보안 상의 이유로 브라우저는 CORS를 제한same origin policy',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
+    },
+    {
+      id: '5cf1423357cd510271cd9289',
+      title: `Race Condition 이란?`,
+      tags: ['os'],
+      text: '',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
+    },
+    {
+      id: '5cf1423357cd510271cd9289',
+      title: `What is Sidecar pattern in k8s`,
+      tags: ['kubernetes'],
+      text:
+        '원래 사용하는 기본 컨테이너의 기능을 확장하거나 강화하는 용도의 컨테이너를 추가하는 패턴 기본 컨테이너와 독립적으로 동작하는 별도의 컨테이너를 붙이는 패턴부가적인 공통 기능들은 사이드카 컨테이너를 추가해서 사용',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
+    },
+    {
+      id: '5cf1423357cd510271cd9289',
+      title: `Show HN: Run VSCode on iPhone and iPad`,
+      tags: ['kubernetes'],
+      text: '',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
+    },
+    {
+      id: '5cf1423357cd510271cd9289',
+      title: `가상 돔(Virtual DOM)과 실제 DOM의 차이점이 무엇인가요?`,
+      tags: ['javascript', 'web', 'html'],
+      text:
+        'DOM: Document Object Model로 웹페이지를 자바스크립트로 제어하기 위한 문서 객체 모델을 의미합니다. 가상 돔(Virtual DOM) 자바스크립트 오브젝트 형식으로 되어있는 가상의 DOM 입니다. 가상으로 만든 돔과 기존의 돔과 비교하여 변화가 필요한 부분만 업데이트하기 위해 사용..',
+      articleLink: 'http://ant.design',
+      created: '2019-05-31T15:05:28.527Z',
+      updated: '2019-05-31T15:05:28.527Z',
     },
   ]
 

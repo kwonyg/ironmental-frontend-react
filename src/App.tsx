@@ -3,7 +3,7 @@ import { BrowserRouter, Switch } from 'react-router-dom'
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from './pages/Home'
 import Archive from './pages/Articles'
-import ArchiveArticle from './pages/ArchiveArticle'
+import ArchiveArticle from './pages/Article'
 import Error from './pages/Error'
 import { routePath } from './constants'
 
