@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Modal, Input, Button } from 'antd'
 import styled from 'styled-components'
 import { validateEmail } from '../../../validators'
+import { keyCodes } from '../../../constants'
 interface Props {
   // visible: boolean
   closeModal: () => void
@@ -11,14 +12,6 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
   /* const [confirmLoading, setConfirmLoading] = useState(false) */
   const [email, setEmail] = useState('')
   const [iserror, setIserror] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (iserror) {
-      setIserror(false)
-    }
-
-    setEmail((e.target as any).value)
-  }
 
   // TODO: iserror를 boolean으로 못받는 이슈 해결하기
   const handleSubmit = () => {
@@ -31,6 +24,26 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
 
   const handleCancel = () => {
     closeModal()
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (iserror) {
+      setIserror(false)
+    }
+
+    setEmail(e.target.value)
+  }
+
+  const handleKeyup = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!email.length) {
+      return
+    }
+
+    if (e.keyCode !== keyCodes.ENTER_KEY) {
+      return
+    }
+
+    handleSubmit()
   }
 
   return (
@@ -56,6 +69,7 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
           placeholder="E-mail"
           size="large"
           onChange={e => handleChange(e)}
+          onKeyUp={e => handleKeyup(e)}
         />
         <Button type="primary" size="large" onClick={handleSubmit}>
           구독하기

@@ -9,6 +9,7 @@ import { useAnimationTrigger } from '../../hooks'
 const TechIntroSection: React.FC = props => {
   const observerEl = useRef<HTMLHeadingElement>(null)
   const animationTrigger = useAnimationTrigger(observerEl)
+
   const TechIcons = icons.map((icon, index) => (
     <Col span={6} key={icon.title}>
       <Img src={icon.src} alt={icon.alt} delay={0.2 * index} />
