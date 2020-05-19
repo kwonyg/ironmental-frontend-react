@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Modal, Input, Button } from 'antd'
 import styled from 'styled-components'
-import { validateEmail } from '../../../validators'
-import { keyCodes } from '../../../constants'
+import { validateEmail } from 'src/services/validators'
+import { keyCodes } from 'src/constants'
+
 interface Props {
   // visible: boolean
   closeModal: () => void

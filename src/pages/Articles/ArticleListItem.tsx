@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { List } from 'antd'
-import { routePath } from '../../constants'
-import { Article } from '../../types'
-import TagLists from '../../components/TagList'
+import { routePath } from 'src/constants'
+import { Article } from 'src/types'
+import TagLists from 'src/components/TagList'
 
 type ArticleProps = {
   article: Article

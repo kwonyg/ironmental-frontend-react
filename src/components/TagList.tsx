@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Tag } from 'antd'
-import { colors } from '../styles/palette'
+import { colors } from 'src/styles/palette'
 
 interface Props {
   tags: string[]

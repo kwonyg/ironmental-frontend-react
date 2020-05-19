@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button } from 'antd'
 import { MailOutlined } from '@ant-design/icons'
-import { fadeInUp } from '../../../styles/animations'
+import { fadeInUp } from 'src/styles/animations'
 import EmilFormModal from './EmilFormModal'
 
 const FormSection: React.FC = () => {

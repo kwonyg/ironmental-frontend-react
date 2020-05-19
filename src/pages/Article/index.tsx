@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DateUtils } from '../../utils/index'
-import TagList from '../../components/TagList'
-import { Article } from '../../types'
+import { DateUtils } from 'src/utils/index'
+import TagList from 'src/components/TagList'
+import { Article } from 'src/types'
 
 // TODO: presentional 컴포넌트가 아닌 store에서 바로 가져오는 컴포넌트로 제작하기
 const ArticlePage: React.FC = () => {
