@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DateUtils } from 'src/utils/index'
+import { dateUtils } from 'src/utils/index'
 import TagList from 'src/components/TagList'
 import { Article } from 'src/types'
 
@@ -26,7 +26,7 @@ const ArticlePage: React.FC = () => {
         <H1>
           <a href={articleLink}>{title}</a>
         </H1>
-        <Date>{DateUtils.convertDate(created)}</Date>
+        <Date>{dateUtils.convertDate(created)}</Date>
         <TagList tags={tags} />
       </Head>
       <main>이건 개 좋은 뉴스야</main>

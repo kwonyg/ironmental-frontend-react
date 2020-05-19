@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Modal, Input, Button } from 'antd'
 import styled from 'styled-components'
-import { validateEmail } from 'src/services/validators'
+import { validators } from 'src/utils'
 import { keyCodes } from 'src/constants'
 
 interface Props {
@@ -16,7 +16,7 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
 
   // TODO: iserror를 boolean으로 못받는 이슈 해결하기
   const handleSubmit = () => {
-    if (!validateEmail(email)) {
+    if (!validators.validateEmail(email)) {
       setIserror(true)
     }
     // setConfirmLoading(true)
