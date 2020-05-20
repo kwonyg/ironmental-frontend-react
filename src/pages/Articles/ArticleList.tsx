@@ -107,11 +107,11 @@ const ArticleList: React.FC = () => {
   ] */
 
   const disptach = useDispatch()
-  const { articles, nextLink } = useSelector(articlesSelector)
+  const { articles } = useSelector(articlesSelector)
 
   useEffect(() => {
     disptach(getArticleList({ page: 0 }))
-  }, [])
+  }, [disptach])
 
   return (
     <List itemLayout="vertical" size="large">

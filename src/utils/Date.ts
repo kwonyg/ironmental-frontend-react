@@ -21,5 +21,5 @@ export const convertDate = (date: string) => {
   const month = removedTimezoneDate.substr(5, 2)
   const day = removedTimezoneDate.substr(8, 2)
 
-  return `${MonthMap[month]}. ${day}. ${year}.`
+  return `${MonthMap[month]} ${day} ${year}`
 }

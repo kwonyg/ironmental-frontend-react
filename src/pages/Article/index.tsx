@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import { dateUtils } from 'src/utils/index'
 import TagList from 'src/components/TagList'
-import { PropsTypes } from 'src/types'
-
-// TODO: presentional 컴포넌트가 아닌 store에서 바로 가져오는 컴포넌트로 제작하기
+import { dateUtils } from 'src/utils/index'
+import { getArticleById } from 'src/services/article/reducer'
+import { articleSelector } from 'src/services/article/selectors'
+import { useParams } from 'react-router-dom'
 const ArticlePage: React.FC = () => {
   // Mock
-  const article = {
+  /* const article = {
     id: '5cf1423357cd510271cd9289',
     title: `Show HN: Zoom-CLI, an automated tool to change your Zoom virtual background`,
     tags: ['web'],
@@ -16,9 +17,17 @@ const ArticlePage: React.FC = () => {
     articleLink: 'http://ant.design',
     created: '2019-05-31T15:05:28.527Z',
     updated: '2019-05-31T15:05:28.527Z',
-  }
+  } */
 
-  const { id, title, tags, text, articleLink, created, updated } = article
+  const dispatch = useDispatch()
+  const { articleId } = useParams()
+
+  const { article } = useSelector(articleSelector)
+  const { title, tags, text, articleLink, created } = article
+
+  useEffect(() => {
+    dispatch(getArticleById(articleId))
+  }, [dispatch, articleId])
 
   return (
     <Section>
@@ -29,7 +38,7 @@ const ArticlePage: React.FC = () => {
         <Date>{dateUtils.convertDate(created)}</Date>
         <TagList tags={tags} />
       </Head>
-      <main>이건 개 좋은 뉴스야</main>
+      <main>{text}</main>
     </Section>
   )
 }

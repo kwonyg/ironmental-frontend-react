@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import { fetchArticles } from './request'
 import { GET_ARTICLES, setArticles } from './reducer'
 
@@ -15,5 +15,5 @@ export const getArticlesSaga = function*() {
 }
 
 export function* rootArticlesSaga() {
-  yield takeLatest(GET_ARTICLES, getArticlesSaga)
+  yield takeEvery(GET_ARTICLES, getArticlesSaga)
 }

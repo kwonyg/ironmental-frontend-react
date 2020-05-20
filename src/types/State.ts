@@ -7,3 +7,15 @@ export type ArticlesState = {
   articles: PropsTypes.Article[]
   nextLink: string
 }
+
+export type ArticleState = {
+  article: {
+    id: string
+    title: string
+    tags: string[]
+    text: string
+    articleLink: string
+    created: string
+    updated: string
+  }
+}

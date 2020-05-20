@@ -1,4 +1,4 @@
-import { PropsTypes, ActionTypes, StateTypes } from 'src/types'
+import { ActionTypes, StateTypes } from 'src/types'
 
 // actions
 export const GET_ARTICLES = 'articles/GET_ARTICLES' as const
@@ -12,29 +12,20 @@ export const getArticleList = ({ page }: { page: number | string }) => ({
 export const setArticles = ({
   articles,
   nextLink,
-}: {
-  articles: PropsTypes.Article[]
-  nextLink: string
-}) => ({
+}: StateTypes.ArticlesState) => ({
   type: GET_ARTICLES_SUCCESS,
   payload: { articles, nextLink },
 })
-
-// state
-// type ArticlesState = {
-//   articles: null | PropsTypes.Article[]
-//   nextLink: null | string
-// }
 
 const initialState: StateTypes.ArticlesState = {
   articles: [],
   nextLink: '',
 }
 
-function articlesReducer(
+export const articlesReducer = (
   state: StateTypes.ArticlesState = initialState,
   action: ActionTypes.Articles
-) {
+) => {
   switch (action.type) {
     case GET_ARTICLES_SUCCESS: {
       const { articles, nextLink } = action.payload
@@ -51,8 +42,6 @@ function articlesReducer(
     }
   }
 }
-
-export { articlesReducer }
 
 // reducer
 // export const articlesReducer = reduxUtils.createReducer<
