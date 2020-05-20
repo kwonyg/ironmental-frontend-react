@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { List } from 'antd'
 import { routePath } from 'src/constants'
-import { Article } from 'src/types'
+import { PropsTypes } from 'src/types'
 import TagLists from 'src/components/TagList'
 
 type ArticleProps = {
-  article: Article
+  article: PropsTypes.Article
 }
 const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
   const { id, title, tags, text } = article
