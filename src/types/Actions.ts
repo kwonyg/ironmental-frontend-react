@@ -1,3 +1,5 @@
-import { getArticleList } from 'src/services/articles/reducer'
+import { getArticleList, setArticles } from 'src/services/articles/reducer'
 
-export type Articles = ReturnType<typeof getArticleList>
+export type Articles =
+  | ReturnType<typeof getArticleList>
+  | ReturnType<typeof setArticles>

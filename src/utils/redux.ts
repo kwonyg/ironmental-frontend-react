@@ -1,8 +1,11 @@
-type ReducerHandler<State, Action> = (state: State, action: Action) => State
+import { ActionTypes } from 'src/types'
+type AllActions = ActionTypes.Articles
 
-export function createReducer<State, Action extends { type: string }>(
+type ReducerHandlers<State, Action> = (state: State, action: Action) => State
+
+export function createReducer<State, Action extends AllActions>(
   initialState: State,
-  handlerMap: { [type: string]: ReducerHandler<State, Action> }
+  handlerMap: { [type: string]: ReducerHandlers<State, Action> }
 ) {
   return function reducer(state = initialState, action: Action) {
     const handler = handlerMap[action.type]
