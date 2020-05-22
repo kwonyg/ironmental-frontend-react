@@ -19,3 +19,7 @@ export type ArticleState = {
     updated: string
   }
 }
+
+export type LoadingState = {
+  isLoading: boolean
+}

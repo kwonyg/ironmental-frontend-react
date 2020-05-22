@@ -1,5 +1,5 @@
 import { StateTypes } from 'src/types'
 
-export const articleSelector = (
+export const selectArticle = (
   state: StateTypes.RootState
 ): StateTypes.ArticleState => state.article

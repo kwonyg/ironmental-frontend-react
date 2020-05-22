@@ -1,4 +1,4 @@
-import { Article } from './Props'
+import { Article } from './props'
 
 export type ArticleSuccess = {
   articles: Article[]

@@ -1,8 +1,10 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { fetchArticles } from './request'
+import { startLoading, finishLoading } from 'src/services/loading/reducer'
 import { GET_ARTICLES, setArticles } from './reducer'
 
 export const getArticlesSaga = function*() {
+  yield put(startLoading())
   try {
     const response = yield call(fetchArticles)
     const { datas, links } = response.data
@@ -11,6 +13,8 @@ export const getArticlesSaga = function*() {
   } catch (e) {
     // put 실패스
     // console.log('사가 요청 실패:', e)
+  } finally {
+    yield put(finishLoading())
   }
 }
 

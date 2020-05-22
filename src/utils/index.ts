@@ -1,4 +1,4 @@
-import * as dateUtils from './Date'
+import * as dateUtils from './date'
 import * as validators from './validator'
 
 import * as sagaUtils from './saga'

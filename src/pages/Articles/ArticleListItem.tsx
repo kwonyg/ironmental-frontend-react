@@ -1,25 +1,34 @@
 import React from 'react'
+import { Skeleton } from 'antd'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { List } from 'antd'
 import { routePath } from 'src/constants'
 import { PropsTypes } from 'src/types'
 import TagLists from 'src/components/TagList'
+import { selectLoading } from 'src/services/loading/selectors'
 
 type ArticleProps = {
   article: PropsTypes.Article
 }
+
 const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
+  const { isLoading } = useSelector(selectLoading)
   const { id, title, tags, text } = article
   const linkTo = `${routePath.ARTICLES}/${id}`
 
   return (
     <ListItem>
-      <ItemLink to={linkTo}>
-        <TagLists tags={tags} />
-        <ItemMeta title={<Title>{title}</Title>} />
-        <Description>{text}</Description>
-      </ItemLink>
+      {isLoading ? (
+        <Skeleton active={true} />
+      ) : (
+        <ItemLink to={linkTo}>
+          <TagLists tags={tags} />
+          <ItemMeta title={<Title>{title}</Title>} />
+          <Description>{text}</Description>
+        </ItemLink>
+      )}
     </ListItem>
   )
 }

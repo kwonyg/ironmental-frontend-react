@@ -1,5 +1,5 @@
-import * as StateTypes from './State'
-import * as ActionTypes from './Actions'
-import * as PropsTypes from './Props'
+import * as StateTypes from './state'
+import * as ActionTypes from './actions'
+import * as PropsTypes from './props'
 
 export { PropsTypes, ActionTypes, StateTypes }
