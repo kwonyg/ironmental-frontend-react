@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { List } from 'antd'
 import ArticleListItem from './ArticleListItem'
 import { getArticleList } from 'src/services/articles/reducer'
 import { articlesSelector } from 'src/services/articles/selectors'
+import { selectLoading } from 'src/services/loading/selectors'
 
 // TODO: useParams를 사용하여 ArchiveIntroSection일 경우 인피니티 스크롤이 먹히지 않도록 하기
 const ArticleList: React.FC = () => {
@@ -108,16 +109,24 @@ const ArticleList: React.FC = () => {
 
   const disptach = useDispatch()
   const { articles } = useSelector(articlesSelector)
+  const { isLoading } = useSelector(selectLoading)
+
+  const articleList = useMemo(
+    () =>
+      articles.map((item, index) => (
+        <ArticleListItem key={index} article={item} isLoading={isLoading} />
+      )),
+    [articles, isLoading]
+  )
 
   useEffect(() => {
     disptach(getArticleList({ page: 0 }))
   }, [disptach])
 
+  // FIXME: 첫 진입시 스켈레톤이미지가 나오지 않는 부분
   return (
     <List itemLayout="vertical" size="large">
-      {articles.map((item, index) => (
-        <ArticleListItem key={index} article={item} />
-      ))}
+      {articleList}
     </List>
   )
 }

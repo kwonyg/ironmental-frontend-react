@@ -4,7 +4,7 @@ import { Button } from 'antd'
 import { MailOutlined } from '@ant-design/icons'
 import { fadeInUp } from 'src/styles/animations'
 import EmilFormModal from './EmilFormModal'
-
+import RequestResult from './RequestResult'
 const FormSection: React.FC = () => {
   const [visibleModal, setVisibleModal] = useState(false)
 
@@ -37,10 +37,9 @@ const FormSection: React.FC = () => {
         >
           구독하기
         </Button>
-        {visibleModal && (
-          <EmilFormModal /* visible={visibleModal} */ closeModal={closeModal} />
-        )}
+        {visibleModal && <EmilFormModal closeModal={closeModal} />}
       </ButtonContainer>
+      {<RequestResult />}
     </Section>
   )
 }

@@ -12,7 +12,6 @@ export const getArticlesSaga = function*() {
     yield put(setArticles({ articles: datas, nextLink: links.next }))
   } catch (e) {
     // put 실패스
-    // console.log('사가 요청 실패:', e)
   } finally {
     yield put(finishLoading())
   }

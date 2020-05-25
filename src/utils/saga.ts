@@ -1,10 +1,4 @@
-// import { call, put } from 'redux-saga/effects'
-
-export const createRequestActionTypes = (type: string): string[] => {
-  const SUCCESS = `${type}_SUCCESS`
-  const FAILURE = `${type}_FAILURE`
-  return [type, SUCCESS, FAILURE]
-}
+import { call, put } from 'redux-saga/effects'
 
 // export default function createRequestSaga<
 //   Action extends { type: string; payload?: {} }

@@ -23,3 +23,10 @@ export type ArticleState = {
 export type LoadingState = {
   isLoading: boolean
 }
+
+export type AuthState = {
+  auth: {
+    isSub: boolean
+    isCertify: boolean
+  }
+}

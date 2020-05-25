@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Modal, Input, Button } from 'antd'
 import styled from 'styled-components'
 import { validators } from 'src/utils'
 import { keyCodes } from 'src/constants'
+import { sendEmailAuth } from 'src/services/auth/reducer'
 
 interface Props {
-  // visible: boolean
   closeModal: () => void
 }
 
-const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
-  /* const [confirmLoading, setConfirmLoading] = useState(false) */
+const EmailFormModal: React.FC<Props> = ({ closeModal }) => {
+  const dispatch = useDispatch()
   const [email, setEmail] = useState('')
   const [iserror, setIserror] = useState(false)
 
@@ -18,9 +19,12 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
   const handleSubmit = () => {
     if (!validators.validateEmail(email)) {
       setIserror(true)
+      return
     }
-    // setConfirmLoading(true)
-    /* closeModal() */
+
+    /* console.log('displatch!') */
+
+    // dispatch(sendEmailAuth(email))
   }
 
   const handleCancel = () => {
@@ -51,7 +55,6 @@ const EmailFormModal: React.FC<Props> = ({ /* visible, */ closeModal }) => {
     <Modal
       visible={true}
       footer={null}
-      /* confirmLoading={confirmLoading}*/
       onCancel={handleCancel}
       bodyStyle={{ paddingBottom: '50px' }}
     >
