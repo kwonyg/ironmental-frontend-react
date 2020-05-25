@@ -4,13 +4,13 @@ import { Modal, Input, Button } from 'antd'
 import styled from 'styled-components'
 import { validators } from 'src/utils'
 import { keyCodes } from 'src/constants'
-import { sendEmailAuth } from 'src/services/auth/reducer'
 
 interface Props {
   closeModal: () => void
+  showResult: () => void
 }
 
-const EmailFormModal: React.FC<Props> = ({ closeModal }) => {
+const EmailFormModal: React.FC<Props> = ({ closeModal, showResult }) => {
   const dispatch = useDispatch()
   const [email, setEmail] = useState('')
   const [iserror, setIserror] = useState(false)
@@ -25,6 +25,8 @@ const EmailFormModal: React.FC<Props> = ({ closeModal }) => {
     /* console.log('displatch!') */
 
     // dispatch(sendEmailAuth(email))
+    showResult()
+    closeModal()
   }
 
   const handleCancel = () => {
@@ -69,7 +71,7 @@ const EmailFormModal: React.FC<Props> = ({ closeModal }) => {
       <InputContainer>
         <StyledInput
           type="email"
-          iserror={iserror ? true : false}
+          iserror={iserror ? 1 : 0}
           placeholder="E-mail"
           size="large"
           onChange={e => handleChange(e)}
@@ -99,7 +101,8 @@ const InputContainer = styled.div`
   display: flex;
 `
 
-const StyledInput = styled(Input)<{ iserror: boolean }>`
+// FIXME:  for a non-boolean attribute. 에러때문에 임시로 iserror 타입을 number로함
+const StyledInput = styled(Input)<{ iserror: number }>`
   ${props => {
     if (props.iserror) {
       return `border: 1px solid red;color: red;`

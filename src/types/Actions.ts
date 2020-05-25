@@ -1,7 +1,7 @@
 import { getArticleList, setArticles } from 'src/services/articles/reducer'
 import { getArticleById, setArticle } from 'src/services/article/reducer'
 import { startLoading, finishLoading } from 'src/services/loading/reducer'
-import { sendEmailAuth, sendEmailAuthSuccess } from 'src/services/auth/reducer'
+import { actions as subscribeActions } from 'src/services/subscribe/reducer'
 
 export type Articles =
   | ReturnType<typeof getArticleList>
@@ -15,6 +15,6 @@ export type Loading =
   | ReturnType<typeof startLoading>
   | ReturnType<typeof finishLoading>
 
-export type Auth =
-  | ReturnType<typeof sendEmailAuth>
-  | ReturnType<typeof sendEmailAuthSuccess>
+export type Subscribe = ReturnType<
+  typeof subscribeActions[keyof typeof subscribeActions]
+>

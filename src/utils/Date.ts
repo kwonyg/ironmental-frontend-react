@@ -1,4 +1,4 @@
-// TODO: enum 타입 조사
+// FIXME: enum 타입으로
 const MonthMap: { [key: string]: string } = {
   '01': 'Jan',
   '03': 'Mar',

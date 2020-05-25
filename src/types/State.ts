@@ -24,8 +24,9 @@ export type LoadingState = {
   isLoading: boolean
 }
 
-export type AuthState = {
-  auth: {
+export type SubscribeState = {
+  isLoading: boolean
+  subscribe: {
     isSub: boolean
     isCertify: boolean
   }

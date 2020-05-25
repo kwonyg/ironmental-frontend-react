@@ -1,5 +1,5 @@
 import { ActionTypes, StateTypes } from 'src/types'
-
+import { reduxUtils } from 'src/utils'
 // actions
 export const GET_ARTICLES = 'articles/GET_ARTICLES' as const
 export const GET_ARTICLES_SUCCESS = 'articles/GET_ARTICLES_SUCCESS' as const
@@ -22,6 +22,20 @@ const initialState: StateTypes.ArticlesState = {
   nextLink: '',
 }
 
+// export const articlesReducer = reduxUtils.createReducer<
+//   StateTypes.ArticlesState,
+//   ActionTypes.Articles
+// >(initialState, {
+//   [GET_ARTICLES_SUCCESS]: (state, action) => {
+//     const { articles, nextLink } = action.payload
+//     return {
+//       ...state,
+//       articles,
+//       nextLink,
+//     }
+//   },
+// })
+
 export const articlesReducer = (
   state: StateTypes.ArticlesState = initialState,
   action: ActionTypes.Articles
@@ -42,22 +56,3 @@ export const articlesReducer = (
     }
   }
 }
-
-// reducer
-// export const articlesReducer = reduxUtils.createReducer<
-//   ArticlesState,
-//   ActionTypes.Articles
-// >(initialState, {
-//   [GET_ARTICLES_SUCCESS]: (
-//     state: ArticlesState,
-//     action: ActionTypes.Articles // FIXME: 네이밍이 Action 객체의 type과 겹치는 기분이 든다.
-//   ): ArticlesState => {
-//     const { articles, nextLink } = action.payload
-//     console.log('action:', action.payload)
-//     return {
-//       ...state,
-//       articles,
-//       nextLink,
-//     }
-//   },
-// })
