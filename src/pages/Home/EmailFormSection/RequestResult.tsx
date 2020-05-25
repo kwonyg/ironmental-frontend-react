@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Lottie from 'react-lottie'
 import { useLockBodyScroll } from 'src/hooks'
 import confirm from 'src/assets/animations/confirm.gif'
 
