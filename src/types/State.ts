@@ -4,6 +4,7 @@ import { PropsTypes } from 'src/types'
 export type RootState = ReturnType<typeof rootReducer>
 
 export type ArticlesState = {
+  isLoading: boolean
   articles: PropsTypes.Article[]
   nextLink: string
 }

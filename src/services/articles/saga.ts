@@ -9,7 +9,7 @@ export const getArticlesSaga = function*() {
     const response = yield call(fetchArticles)
     const { datas, links } = response.data
 
-    yield put(setArticles({ articles: datas, nextLink: links.next }))
+    yield put(setArticles(datas, links.next))
   } catch (e) {
     // put 실패스
   } finally {
