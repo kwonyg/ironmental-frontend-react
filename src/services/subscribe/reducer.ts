@@ -67,11 +67,11 @@ export const subscribeReducer = (
     }
 
     case START_SUBSCRIBE_LOADING: {
-      return { ...state, isLoading: true }
+      return { ...state, loading: true }
     }
 
     case END_SUBSCRIBE_LOADING: {
-      return { ...state, isLoading: false }
+      return { ...state, loading: false }
     }
 
     default: {
