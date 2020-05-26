@@ -4,12 +4,15 @@ import { PropsTypes } from 'src/types'
 export type RootState = ReturnType<typeof rootReducer>
 
 export type ArticlesState = {
-  isLoading: boolean
+  error: Error | null
+  loading: boolean
   articles: PropsTypes.Article[]
   nextLink: string
 }
 
 export type ArticleState = {
+  error: Error | null
+  loading: boolean
   article: {
     id: string
     title: string
@@ -26,9 +29,10 @@ export type LoadingState = {
 }
 
 export type SubscribeState = {
-  isLoading: boolean
-  subscribe: {
-    isSub: boolean
-    isCertify: boolean
+  error: Error | null
+  loading: boolean
+  result: {
+    message: string
+    status: '미구독' | '미인증' | '구독중' | ''
   }
 }

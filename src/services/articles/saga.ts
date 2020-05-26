@@ -1,19 +1,24 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { fetchArticles } from './request'
-import { startLoading, finishLoading } from 'src/services/loading/reducer'
-import { GET_ARTICLES, setArticles } from './reducer'
+import {
+  GET_ARTICLES,
+  getArticlesSuccess,
+  getArticlesFailure,
+  startArticlesLoading,
+  endArticlesLoading,
+} from './reducer'
 
 export const getArticlesSaga = function*() {
-  yield put(startLoading())
+  yield put(startArticlesLoading())
   try {
     const response = yield call(fetchArticles)
     const { datas, links } = response.data
 
-    yield put(setArticles(datas, links.next))
+    yield put(getArticlesSuccess(datas, links.next))
   } catch (e) {
-    // put 실패스
+    yield put(getArticlesFailure(e))
   } finally {
-    yield put(finishLoading())
+    yield put(endArticlesLoading())
   }
 }
 

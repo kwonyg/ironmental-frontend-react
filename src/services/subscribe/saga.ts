@@ -1,10 +1,11 @@
-import { takeLatest, call, put } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import { AnyAction } from 'redux'
 import { sendEmailSubscribe } from 'src/services/subscribe/request'
 
 import {
   SEND_EMAIL_SUBSCRIBE,
   sendEmailSubscribeSuccess,
+  sendEmailSubscribeFailure,
   startSubscribeLoading,
   endSubscribeLoading,
 } from 'src/services/subscribe/reducer'
@@ -16,15 +17,15 @@ const sendEmailSaga = function*(action: AnyAction) {
   try {
     const response = yield call(sendEmailSubscribe, action.payload.email)
     // console.log('response: ', response)
-    const { isSub, isCertify } = response.data
-    yield put(sendEmailSubscribeSuccess(isSub, isCertify))
+    const { isSub, isCertify, message } = response.data
+    yield put(sendEmailSubscribeSuccess({ isSub, isCertify, message }))
   } catch (e) {
-    // errer_failure
+    yield put(sendEmailSubscribeFailure(e))
   } finally {
     yield put(endSubscribeLoading())
   }
 }
 
 export function* rootEmailSaga() {
-  yield takeLatest(SEND_EMAIL_SUBSCRIBE, sendEmailSaga)
+  yield takeEvery(SEND_EMAIL_SUBSCRIBE, sendEmailSaga)
 }

@@ -4,23 +4,29 @@ export const START_ARTICLES_LOADING = 'articles/START_ARTICLES_LOADING' as const
 export const END_ARTICLES_LOADING = 'articles/END_ARTICLES_LOADING' as const
 export const GET_ARTICLES = 'articles/GET_ARTICLES' as const
 export const GET_ARTICLES_SUCCESS = 'articles/GET_ARTICLES_SUCCESS' as const
+export const GET_ARTICLES_FAILURE = 'articles/GET_ARTICLES_FAILURE' as const
 
 export const startArticlesLoading = () => ({ type: START_ARTICLES_LOADING })
 export const endArticlesLoading = () => ({ type: END_ARTICLES_LOADING })
-export const getArticleList = (page: number | string) => ({
+export const getArticles = (page: number | string) => ({
   type: GET_ARTICLES,
   payload: { page },
 })
-export const setArticles = (
-  articles: PropsTypes.Article,
+export const getArticlesSuccess = (
+  articles: PropsTypes.Article[],
   nextLink: string
 ) => ({
   type: GET_ARTICLES_SUCCESS,
   payload: { articles, nextLink },
 })
+export const getArticlesFailure = (error: Error) => ({
+  type: GET_ARTICLES_FAILURE,
+  payload: { error },
+})
 
 const initialState: StateTypes.ArticlesState = {
-  isLoading: false,
+  error: null,
+  loading: false,
   articles: [],
   nextLink: '',
 }
@@ -40,17 +46,26 @@ export const articlesReducer = (
       }
     }
 
+    case GET_ARTICLES_FAILURE: {
+      const { error } = action.payload
+
+      return {
+        ...state,
+        error,
+      }
+    }
+
     case START_ARTICLES_LOADING: {
       return {
         ...state,
-        isLoading: true,
+        loading: true,
       }
     }
 
     case END_ARTICLES_LOADING: {
       return {
         ...state,
-        isLoading: false,
+        loading: false,
       }
     }
 

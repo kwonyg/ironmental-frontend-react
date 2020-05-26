@@ -6,15 +6,13 @@ import TagList from 'src/components/TagList'
 import { dateUtils } from 'src/utils'
 import { getArticleById } from 'src/services/article/reducer'
 import { selectArticle } from 'src/services/article/selectors'
-import { selectLoading } from 'src/services/loading/selectors'
 import { useParams } from 'react-router-dom'
 
 const ArticlePage: React.FC = () => {
   const dispatch = useDispatch()
   const { articleId } = useParams()
 
-  const { isLoading } = useSelector(selectLoading)
-  const { article } = useSelector(selectArticle)
+  const { loading, article } = useSelector(selectArticle)
   const { title, tags, text, articleLink, created } = article
 
   useEffect(() => {
@@ -23,7 +21,7 @@ const ArticlePage: React.FC = () => {
 
   return (
     <Section>
-      {isLoading ? (
+      {loading ? (
         <Skeleton active={true} />
       ) : (
         <>

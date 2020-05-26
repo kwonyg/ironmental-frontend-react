@@ -4,6 +4,7 @@ import { Modal, Input, Button } from 'antd'
 import styled from 'styled-components'
 import { validators } from 'src/utils'
 import { keyCodes } from 'src/constants'
+import { sendEmailSubscribe } from 'src/services/subscribe/reducer'
 
 interface Props {
   closeModal: () => void
@@ -22,9 +23,7 @@ const EmailFormModal: React.FC<Props> = ({ closeModal, showResult }) => {
       return
     }
 
-    /* console.log('displatch!') */
-
-    // dispatch(sendEmailAuth(email))
+    dispatch(sendEmailSubscribe(email))
     showResult()
     closeModal()
   }
