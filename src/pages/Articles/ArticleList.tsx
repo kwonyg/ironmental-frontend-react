@@ -1,10 +1,11 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { List } from 'antd'
+import { PropsTypes } from 'src/types'
 import ArticleListItem from './ArticleListItem'
+import ArticlesLoading from './ArticlesLoading'
 import { getArticles } from 'src/services/articles/reducer'
 import { articlesSelector } from 'src/services/articles/selectors'
-import { PropsTypes } from 'src/types'
 
 // TODO: useParams를 사용하여 ArchiveIntroSection일 경우 인피니티 스크롤이 먹히지 않도록 하기
 const ArticleList: React.FC = () => {
@@ -109,6 +110,7 @@ const ArticleList: React.FC = () => {
 
   const disptach = useDispatch()
   const { loading, articles } = useSelector(articlesSelector)
+  const $observerEl = useRef<HTMLDivElement>(null)
 
   const articleList = useMemo(
     () =>
@@ -118,15 +120,32 @@ const ArticleList: React.FC = () => {
     [articles, loading]
   )
 
+  // TODO: 승욱이랑 nextLink를 링크로 할지, 아니면 다음 쿼리를 넘길지 의논하기. 아니면 굳이 헤이토스를 지키지 않고 앞에서 해결해도 괜찮을듯
   useEffect(() => {
-    disptach(getArticles(0))
+    disptach(getArticles(0, 15))
   }, [disptach])
+
+  // TODO: 인피니티 스크롤 hooks나 공통 컴포넌트로 빼기
+  /* useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      const target = entries[0]
+      if (target.isIntersecting) {
+        observer.unobserve($observerEl.current as Element)
+        // dispatch(loadMore)
+        observer.observe($observerEl.current as Element)
+      }
+    })
+    observer.observe($observerEl.current as Element)
+  }, []) */
 
   // FIXME: 첫 진입시 스켈레톤이미지가 나오지 않는 부분
   return (
-    <List itemLayout="vertical" size="large">
-      {articleList}
-    </List>
+    <>
+      <List itemLayout="vertical" size="large">
+        {articleList}
+      </List>
+      <ArticlesLoading isEnd={true /*loading */} ref={$observerEl} />
+    </>
   )
 }
 

@@ -7,11 +7,14 @@ import {
   startArticlesLoading,
   endArticlesLoading,
 } from './reducer'
+import { AnyAction } from 'redux'
 
-export const getArticlesSaga = function*() {
+export const getArticlesSaga = function*(action: AnyAction) {
   yield put(startArticlesLoading())
   try {
-    const response = yield call(fetchArticles)
+    const { offset, limit } = action.payload
+    const response = yield call(fetchArticles, { offset, limit })
+
     const { datas, links } = response.data
 
     yield put(getArticlesSuccess(datas, links.next))

@@ -8,9 +8,9 @@ export const GET_ARTICLES_FAILURE = 'articles/GET_ARTICLES_FAILURE' as const
 
 export const startArticlesLoading = () => ({ type: START_ARTICLES_LOADING })
 export const endArticlesLoading = () => ({ type: END_ARTICLES_LOADING })
-export const getArticles = (page: number | string) => ({
+export const getArticles = (offset: number, limit: number) => ({
   type: GET_ARTICLES,
-  payload: { page },
+  payload: { offset, limit },
 })
 export const getArticlesSuccess = (
   articles: PropsTypes.Article[],
