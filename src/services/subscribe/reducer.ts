@@ -17,16 +17,14 @@ export const sendEmailSubscribeFailure = (error: Error) => ({
   payload: { error },
 })
 export const sendEmailSubscribeSuccess = ({
-  isSub,
-  isCertify,
+  isSubscribeCertified,
   message,
 }: {
-  isSub: boolean
-  isCertify: boolean
+  isSubscribeCertified: boolean
   message: string
 }) => ({
   type: SEND_EMAIL_SUBSCRIBE_SUCCESS,
-  payload: { isSub, isCertify, message },
+  payload: { isSubscribeCertified, message },
 })
 
 const initialState: StateTypes.SubscribeState = {
@@ -43,20 +41,9 @@ export const subscribeReducer = (
 ) => {
   switch (action.type) {
     case SEND_EMAIL_SUBSCRIBE_SUCCESS: {
-      const { isSub, isCertify, message } = action.payload
-      let status = ''
+      const { isSubscribeCertified, message } = action.payload
+      const status = isSubscribeCertified ? '미구독' : '구독중'
 
-      if (!isSub && !isCertify) {
-        status = '미구독'
-      }
-
-      if (!isSub && isCertify) {
-        status = '미인증'
-      }
-
-      if (isSub && isCertify) {
-        status = '구독중'
-      }
       return { ...state, result: { message, status } }
     }
 

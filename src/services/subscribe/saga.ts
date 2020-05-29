@@ -16,9 +16,9 @@ const sendEmailSaga = function*(action: AnyAction) {
   yield put(startSubscribeLoading())
   try {
     const response = yield call(sendEmailSubscribe, action.payload.email)
-    // console.log('response: ', response)
-    const { isSub, isCertify, message } = response.data
-    yield put(sendEmailSubscribeSuccess({ isSub, isCertify, message }))
+    const { isSubscribeCertified, message } = response.data
+
+    yield put(sendEmailSubscribeSuccess({ isSubscribeCertified, message }))
   } catch (e) {
     yield put(sendEmailSubscribeFailure(e))
   } finally {
