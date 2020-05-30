@@ -10,7 +10,7 @@ const index: React.FC = () => {
       <EmailFormSection />
       <PhoneIntroSection />
       <TechIntroSection />
-      <ArchiveIntroSection />
+      {/* <ArchiveIntroSection /> */}
     </>
   )
 }

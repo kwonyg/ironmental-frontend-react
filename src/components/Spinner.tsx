@@ -18,6 +18,7 @@ const StyledDiv = styled.div<{ width: number; color: string }>`
   }}
   border-right-color: transparent;
   border-radius: 50%;
+
   @keyframes rotate {
     0% {
       transform: rotate(0deg);
