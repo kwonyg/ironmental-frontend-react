@@ -45,15 +45,6 @@ const RequestResult: React.FC<Props> = ({ closeResult }) => {
         />
       )}
 
-      {!loading && result.status === '미인증' && (
-        <Lottie
-          options={{ animationData: exclamationAnimation, loop: false }}
-          height={350}
-          width={350}
-          // style={{ margin: '100px 105px' }}
-        />
-      )}
-
       {!loading && result.status === '구독중' && (
         <Lottie
           options={{ animationData: exclamationAnimation, loop: false }}

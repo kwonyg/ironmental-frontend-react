@@ -30,13 +30,13 @@ const FormSection: React.FC = () => {
   return (
     <Section>
       <H1>
-        <span>개발 상식 메일링 서비스</span>
+        <span>개발 토픽 메일링 서비스</span>
         <br />
         <span>아이언멘탈</span>
       </H1>
       <Article>
-        아이언 멘탈은 다양한 개발상식을 가볍게 접하고 싶은 이용자에게 매주
-        개발상식 관련 키워드를 이메일로 보내주는 구독 서비스입니다.
+        아이언 멘탈은 다양한 개발토픽을 가볍게 접하고 싶은 이용자에게 매주
+        개발토픽을 이메일로 보내주는 구독 서비스입니다.
       </Article>
       <ButtonContainer>
         <Button

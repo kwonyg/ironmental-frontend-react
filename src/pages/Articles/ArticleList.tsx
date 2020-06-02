@@ -128,7 +128,7 @@ const ArticleList: React.FC = () => {
 
     // 이미 state가 존재하는 경우 다음 next parameter를 활용해서 dispatch하기
     // console.log('next dispatch')
-  }, [disptach])
+  }, [disptach, articles.length])
 
   // TODO: 인피니티 스크롤 hooks나 공통 컴포넌트로 빼기
   /* useEffect(() => {

@@ -19,6 +19,13 @@ import {
   endSubscribeLoading,
   sendEmailSubscribeFailure,
 } from 'src/services/subscribe/reducer'
+import {
+  startAuthLoading,
+  endAuthLoading,
+  sendAuthConfirmFailure,
+  sendAuthConfirmSuccess,
+  sendAuthConfirm,
+} from 'src/services/auth/reducer'
 
 export type Articles =
   | ReturnType<typeof getArticles>
@@ -40,3 +47,10 @@ export type Subscribe =
   | ReturnType<typeof sendEmailSubscribeFailure>
   | ReturnType<typeof startSubscribeLoading>
   | ReturnType<typeof endSubscribeLoading>
+
+export type Auth =
+  | ReturnType<typeof startAuthLoading>
+  | ReturnType<typeof endAuthLoading>
+  | ReturnType<typeof sendAuthConfirm>
+  | ReturnType<typeof sendAuthConfirmSuccess>
+  | ReturnType<typeof sendAuthConfirmFailure>
