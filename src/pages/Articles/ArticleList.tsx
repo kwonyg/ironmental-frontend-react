@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { PropsTypes } from 'src/types'
 import ArticleListItem from './ArticleListItem'
 import ArticleLoading from 'src/components/ArticleLoading'
+import ArticlesLoading from 'src/pages/Articles/ArticlesLoading'
 import { getArticles } from 'src/services/articles/reducer'
 import { articlesSelector } from 'src/services/articles/selectors'
 import { List } from 'antd'
@@ -149,6 +150,7 @@ const ArticleList: React.FC = () => {
         {articleList}
       </List>
       <ArticleLoading loading={loading} />
+      <ArticlesLoading isEnd={true /*loading */} /* ref={$observerEl} */ />
     </>
   )
 }
