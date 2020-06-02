@@ -45,8 +45,11 @@ const ItemMeta = styled(ListItem.Meta)`
   }
 `
 
-const Description = styled.span`
+const Description = styled.p`
   color: grey;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 const ItemLink = styled(Link)`
