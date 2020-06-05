@@ -6,6 +6,7 @@ import {
   getArticlesFailure,
   startArticlesLoading,
   endArticlesLoading,
+  GET_MORE_ARTICLES,
 } from './reducer'
 import { AnyAction } from 'redux'
 
@@ -27,4 +28,5 @@ export const getArticlesSaga = function*(action: AnyAction) {
 
 export function* rootArticlesSaga() {
   yield takeEvery(GET_ARTICLES, getArticlesSaga)
+  yield takeEvery(GET_MORE_ARTICLES, getArticlesSaga)
 }

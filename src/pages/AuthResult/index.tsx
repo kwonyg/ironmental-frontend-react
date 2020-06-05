@@ -11,7 +11,7 @@ import styled from 'styled-components'
 const AuthResult: React.FC = () => {
   const dispatch = useDispatch()
   const { subscriberId } = useParams()
-  const { error, result, loading } = useSelector(authSelector)
+  const { error /* result, loading */ } = useSelector(authSelector)
 
   useEffect(() => {
     dispatch(sendAuthConfirm(subscriberId))
@@ -43,10 +43,10 @@ const AuthResult: React.FC = () => {
 
 const AuthResultContainer = styled.div``
 
-const Message = styled.p`
-  margin: 0 auto;
-  font-size: 1.2rem;
-  text-align: center;
-`
+// const Message = styled.p`
+//   margin: 0 auto;
+//   font-size: 1.2rem;
+//   text-align: center;
+// `
 
 export default AuthResult

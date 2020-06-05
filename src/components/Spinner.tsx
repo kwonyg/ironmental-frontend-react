@@ -9,7 +9,6 @@ const StyledDiv = styled.div<{ width: number; color: string }>`
   display: inline-block;
   height: 28px;
   width: 28px;
-  position: absolute;
   top: calc(50% - 14px);
   left: calc(50% - 14px);
   animation: rotate 0.8s infinite linear;

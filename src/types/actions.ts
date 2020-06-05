@@ -4,6 +4,9 @@ import {
   getArticlesFailure,
   startArticlesLoading,
   endArticlesLoading,
+  getMoreArticles,
+  getMoreArticlesSuccess,
+  getMoreArticlesFailure,
 } from 'src/services/articles/reducer'
 import {
   getArticleById,
@@ -33,6 +36,9 @@ export type Articles =
   | ReturnType<typeof getArticlesFailure>
   | ReturnType<typeof startArticlesLoading>
   | ReturnType<typeof endArticlesLoading>
+  | ReturnType<typeof getMoreArticles>
+  | ReturnType<typeof getMoreArticlesSuccess>
+  | ReturnType<typeof getMoreArticlesFailure>
 
 export type Article =
   | ReturnType<typeof getArticleById>
