@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import Lottie from 'react-lottie'
-import ConfirmAnimation from 'src/assets/animations/confirm.json'
-import FailAnimation from 'src/assets/animations/fail.json'
+import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { authSelector } from 'src/services/auth/selector'
 import { sendAuthConfirm } from 'src/services/auth/reducer'
-import { useParams } from 'react-router-dom'
-import styled from 'styled-components'
+import ConfirmAnimation from 'src/assets/animations/confirm.json'
+import FailAnimation from 'src/assets/animations/fail.json'
 
 const AuthResult: React.FC = () => {
   const dispatch = useDispatch()

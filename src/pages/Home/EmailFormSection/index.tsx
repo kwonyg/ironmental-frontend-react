@@ -9,8 +9,6 @@ const FormSection: React.FC = () => {
   const [visibleModal, setVisibleModal] = useState(false)
   const [visibleResult, setVisibleResult] = useState(false)
 
-  // TODO: 부모-자식 간에 통신하게 하지말고 redux 상태로만 visible 하게하기
-  // 여기서 const visibleModal =  useSelector()로 하고, modal 컴포넌트에서 showModal 메서드 관리
   const showModal = () => {
     setVisibleModal(true)
   }
@@ -62,9 +60,6 @@ const Section = styled.section`
 `
 const Article = styled.article`
   text-align: center;
-
-  /* TODO: H1과 중복 제거 */
-  /* Animation */
   ${fadeInUp(0.5)}
 `
 
@@ -89,8 +84,6 @@ const ButtonContainer = styled.div`
   padding: 15px;
   display: flex;
   justify-content: center;
-  /* align-items: center;
-  align-content: center; */
 `
 
 export default FormSection

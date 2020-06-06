@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react'
-import { Skeleton } from 'antd'
+import { Skeleton, Divider } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import TagList from 'src/components/TagList'
 import { dateUtils } from 'src/utils'
 import { getArticleById } from 'src/services/article/reducer'
 import { selectArticle } from 'src/services/article/selectors'
-import { useParams } from 'react-router-dom'
-import { Divider } from 'antd'
+import TagList from 'src/components/TagList'
 
 const ArticlePage: React.FC = () => {
   const dispatch = useDispatch()

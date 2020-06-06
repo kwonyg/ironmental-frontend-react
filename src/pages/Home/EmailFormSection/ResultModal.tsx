@@ -50,7 +50,6 @@ const RequestResult: React.FC<Props> = ({ closeResult }) => {
           options={{ animationData: exclamationAnimation, loop: false }}
           height={350}
           width={350}
-          // style={{ margin: '100px 105px' }}
         />
       )}
 
@@ -59,7 +58,6 @@ const RequestResult: React.FC<Props> = ({ closeResult }) => {
           options={{ animationData: failAnimation, loop: false }}
           height={400}
           width={400}
-          // style={{ margin: '100px 105px' }}
         />
       )}
       {loading && <p>인증메일을 보내는 중입니다!</p>}
