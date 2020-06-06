@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects'
+import { call, put, takeEvery, debounce } from 'redux-saga/effects'
 import { fetchArticles } from './request'
 import {
   GET_ARTICLES,
@@ -28,5 +28,5 @@ export const getArticlesSaga = function*(action: AnyAction) {
 
 export function* rootArticlesSaga() {
   yield takeEvery(GET_ARTICLES, getArticlesSaga)
-  yield takeEvery(GET_MORE_ARTICLES, getArticlesSaga)
+  yield debounce(1000, GET_MORE_ARTICLES, getArticlesSaga)
 }

@@ -1,14 +1,13 @@
 import React, { useEffect, useMemo, useRef } from 'react'
 import { List } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
-import { useInfinteScroll } from 'src/hooks'
+import { useInfiniteScroll } from 'src/hooks'
 import { PropsTypes } from 'src/types'
-import ArticleListItem from './ArticleListItem'
-import ArticleLoading from 'src/components/ArticleLoading'
-import ArticlesLoading from 'src/pages/Articles/ArticlesLoading'
+import { apiUtils } from 'src/utils'
 import { getArticles } from 'src/services/articles/reducer'
 import { articlesSelector } from 'src/services/articles/selectors'
-import { apiUtils } from 'src/utils'
+import ArticleListItem from './ArticleListItem'
+import ArticlesLoading from 'src/pages/Articles/ArticlesLoading'
 
 // TODO: useParams를 사용하여 ArchiveIntroSection일 경우 인피니티 스크롤이 먹히지 않도록 하기
 const ArticleList: React.FC = () => {
@@ -34,12 +33,12 @@ const ArticleList: React.FC = () => {
     // console.log('next dispatch')
   }, [dispatch, articles.length])
 
-  useInfinteScroll({
+  useInfiniteScroll({
     target,
     onIntersect: entries => {
-      if (entries[0].isIntersecting && !!nextLink) {
+      if (!loading && !!nextLink && entries[0].isIntersecting) {
         const { offset, limit } = apiUtils.querystringToObj(nextLink)
-        // console.log('감지:', offset, ' ', limit)
+
         dispatch(getArticles(offset, limit))
       }
     },
