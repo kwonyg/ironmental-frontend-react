@@ -6,7 +6,7 @@ import {
   sendAuthConfirmFailure,
   startAuthLoading,
   endAuthLoading,
-} from 'src/services/auth/reducer'
+} from 'src/services/auth/actions'
 import { AnyAction } from 'redux'
 
 const sendAuthSaga = function*(action: AnyAction) {

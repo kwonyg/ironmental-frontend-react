@@ -7,28 +7,28 @@ import {
   getMoreArticles,
   getMoreArticlesSuccess,
   getMoreArticlesFailure,
-} from 'src/services/articles/reducer'
+} from 'src/services/articles/actions'
 import {
   getArticleById,
   getArticleByIdSuccess,
   getArticleByIdFailure,
   startArticleLoading,
   endArticleLoading,
-} from 'src/services/article/reducer'
+} from 'src/services/article/actions'
 import {
   sendEmailSubscribe,
   sendEmailSubscribeSuccess,
   startSubscribeLoading,
   endSubscribeLoading,
   sendEmailSubscribeFailure,
-} from 'src/services/subscribe/reducer'
+} from 'src/services/subscribe/actions'
 import {
   startAuthLoading,
   endAuthLoading,
   sendAuthConfirmFailure,
   sendAuthConfirmSuccess,
   sendAuthConfirm,
-} from 'src/services/auth/reducer'
+} from 'src/services/auth/actions'
 
 export type Articles =
   | ReturnType<typeof getArticles>

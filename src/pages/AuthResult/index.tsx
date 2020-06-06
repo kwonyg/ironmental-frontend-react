@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { authSelector } from 'src/services/auth/selector'
-import { sendAuthConfirm } from 'src/services/auth/reducer'
+import { sendAuthConfirm } from 'src/services/auth/actions'
 import ConfirmAnimation from 'src/assets/animations/confirm.json'
 import FailAnimation from 'src/assets/animations/fail.json'
 

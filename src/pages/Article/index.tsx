@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { dateUtils } from 'src/utils'
-import { getArticleById } from 'src/services/article/reducer'
+import { getArticleById } from 'src/services/article/actions'
 import { selectArticle } from 'src/services/article/selectors'
 import TagList from 'src/components/TagList'
 
