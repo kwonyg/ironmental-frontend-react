@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { List, Space } from 'antd'
+import { List } from 'antd'
 import { routePath } from 'src/constants'
-import { MessageOutlined, LikeOutlined } from '@ant-design/icons'
+import { MessageOutlined, LikeOutlined, LikeTwoTone } from '@ant-design/icons'
 import { PropsTypes } from 'src/types'
 import TagLists from 'src/components/TagList'
 
@@ -15,15 +15,22 @@ const ArticleListItem: React.FC<ArticleProps> = ({ article }) => {
   const { id, title, tags, text } = article
   const linkTo = `${routePath.ARTICLES}/${id}`
 
+  // FIXME: API 완성되면 리덕스 상태로 빼기
+  const [likes, setLikes] = useState(false)
+
+  const onClickLikes = () => {
+    setLikes(!likes)
+  }
+
   const actions = [
-    <Space key="like-status">
-      <LikeOutlined />
+    <ActionItem key="like-status" onClick={onClickLikes}>
+      {likes ? <LikeTwoTone /> : <LikeOutlined />}
       {234}
-    </Space>,
-    <Space key="comments">
+    </ActionItem>,
+    <ActionItem key="comments">
       <MessageOutlined />
       {345}
-    </Space>,
+    </ActionItem>,
   ]
 
   return (
@@ -78,6 +85,12 @@ const Title = styled.div`
   color: black;
   font-size: 1rem;
   font-weight: bold;
+`
+
+const ActionItem = styled.span`
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export default ArticleListItem
