@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Comment, Tooltip, Avatar } from 'antd'
 import { LikeOutlined, LikeFilled, MessageOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
-
+import ThreadList from './ThreadList'
 const CommentListItem: React.FC = () => {
   // FIXME: API 완성되면 리덕스 상태로 빼기
   const [likes, setLikes] = useState(false)
@@ -21,6 +21,9 @@ const CommentListItem: React.FC = () => {
         <ActionItem key="comments">
           <MessageOutlined />
           214
+        </ActionItem>,
+        <ActionItem key="reply-to" style={{ color: '#1890ff' }}>
+          쓰레드 보기..
         </ActionItem>,
       ]}
       author={<a>송중기</a>}
