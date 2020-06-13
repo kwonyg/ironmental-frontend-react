@@ -42,7 +42,7 @@ const ArticleList: React.FC = () => {
 
   return (
     <>
-      <List itemLayout="vertical" size="large">
+      <List itemLayout="vertical" size="large" style={{ marginBottom: '30px' }}>
         {articleList}
       </List>
       <ArticlesLoading ref={target} isEnd={!loading} />
