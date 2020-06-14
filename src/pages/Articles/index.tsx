@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import ArticleList from './ArticleList'
+
 // import SearchInput from './SearchInput'
 const Articles: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const Articles: React.FC = () => {
 const Section = styled.section``
 
 const SearchContainer = styled.div`
-  1margin: 30px 0;
+  /* margin: 30px 0; */
   text-align: right;
 `
 
