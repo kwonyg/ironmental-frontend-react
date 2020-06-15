@@ -4,36 +4,40 @@ import { LikeOutlined, LikeFilled, MessageOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import ThreadList from './ThreadList'
 
-interface Props {
-  type: 'comment' | 'thread'
-}
-
-const CommentListItem: React.FC<Props> = ({ type = 'comment' }) => {
+const CommentListItem: React.FC = () => {
   // FIXME: API 완성되면 리덕스 상태로 빼기
   const [likes, setLikes] = useState(false)
+  const [showThread, setShowThread] = useState(false)
 
   const onClickLikes = () => {
     setLikes(!likes)
   }
 
+  const onClickShowThread = () => {
+    setShowThread(!showThread)
+  }
+
   return (
     <>
-      <StyledComment
-        type={type}
+      <Comment
         actions={[
           <ActionItem key="like-status" onClick={onClickLikes}>
             {likes ? <LikeFilled /> : <LikeOutlined />}
             214
           </ActionItem>,
-          <ActionItem key="comments">
+          <ActionItem key="comments" onClick={onClickShowThread}>
             <MessageOutlined />
             214
           </ActionItem>,
-          <ActionItem key="reply-to" style={{ color: '#1890ff' }}>
+          <ActionItem
+            key="reply-to"
+            style={{ color: '#1890ff' }}
+            onClick={onClickShowThread}
+          >
             쓰레드 보기..
           </ActionItem>,
         ]}
-        author={<a>송중기</a>}
+        author={<a href="http://google.com">송중기</a>}
         avatar={
           <Avatar
             src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -54,7 +58,7 @@ const CommentListItem: React.FC<Props> = ({ type = 'comment' }) => {
           </Tooltip>
         }
       />
-      <ThreadList />
+      {showThread && <ThreadList />}
     </>
   )
 }
@@ -64,16 +68,6 @@ const ActionItem = styled.div`
   &:hover {
     cursor: pointer;
   }
-`
-
-const StyledComment = styled(Comment)<{ type: 'comment' | 'thread' }>`
-  ${props => {
-    if (props.type === 'thread') {
-      return `background-color:#fafbfd;
-      border-top: 1px solid #e6ecf5;
-      padding: 30px;`
-    }
-  }}
 `
 
 export default CommentListItem

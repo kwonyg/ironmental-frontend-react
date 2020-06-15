@@ -9,6 +9,7 @@ import { getArticleById } from 'src/services/article/actions'
 import { selectArticle } from 'src/services/article/selectors'
 import TagList from 'src/components/TagList'
 import CommentList from './CommentList'
+import CommentForm from './CommentForm'
 
 const ArticlePage: React.FC = () => {
   const dispatch = useDispatch()
@@ -55,6 +56,7 @@ const ArticlePage: React.FC = () => {
           </LinkContainer>
 
           <Divider orientation="left">Comments</Divider>
+          <CommentForm />
           <CommentList />
         </>
       )}

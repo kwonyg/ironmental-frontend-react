@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Comment, Tooltip, Avatar } from 'antd'
-import { LikeOutlined, LikeFilled, MessageOutlined } from '@ant-design/icons'
+import { LikeOutlined, LikeFilled } from '@ant-design/icons'
 import styled from 'styled-components'
-import ThreadList from './ThreadList'
 
 const ThreadListItem: React.FC = () => {
   // FIXME: API 완성되면 리덕스 상태로 빼기
@@ -20,7 +19,7 @@ const ThreadListItem: React.FC = () => {
           214
         </ActionItem>,
       ]}
-      author={<a>리누스 토발즈</a>}
+      author={<a href="http://google.com">리누스 토발즈</a>}
       avatar={
         <Avatar
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
