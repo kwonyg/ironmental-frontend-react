@@ -1,28 +1,12 @@
 import * as React from 'react'
-import { List } from 'antd'
-import CommentListItem from './CommentListItem'
+
+import ThreadListItem from './ThreadListItem'
 const ThreadList: React.FC = () => {
   return (
-    <List>
-      <li>
-        <CommentListItem />
-      </li>
-      <li>
-        <CommentListItem />
-      </li>
-      <li>
-        <CommentListItem />
-      </li>
-      <li>
-        <CommentListItem />
-      </li>
-      <li>
-        <CommentListItem />
-      </li>
-      <li>
-        <CommentListItem />
-      </li>
-    </List>
+    <div>
+      <ThreadListItem />
+      <ThreadListItem />
+    </div>
   )
 }
 

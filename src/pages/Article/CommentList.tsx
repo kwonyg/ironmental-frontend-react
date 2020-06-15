@@ -1,36 +1,36 @@
 import * as React from 'react'
 import { List } from 'antd'
 import CommentListItem from './CommentListItem'
-
+import ThreadList from './ThreadList'
 const CommentList: React.FC = () => {
   return (
     <List>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
       <li>
-        <CommentListItem />
+        <CommentListItem type="comment" />
       </li>
     </List>
   )

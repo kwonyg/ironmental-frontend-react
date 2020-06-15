@@ -13,6 +13,7 @@ import CommentList from './CommentList'
 const ArticlePage: React.FC = () => {
   const dispatch = useDispatch()
   const { articleId } = useParams()
+
   // FIXME: API 완성되면 redux 상태로 빼기
   const [likes, setLikes] = useState(false)
   const { loading, article } = useSelector(selectArticle)
