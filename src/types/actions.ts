@@ -29,6 +29,21 @@ import {
   sendAuthConfirmSuccess,
   sendAuthConfirm,
 } from 'src/services/auth/actions'
+import {
+  startSetUserLoading,
+  endSetUserLoading,
+  sendLogin,
+  sendLoginSuccess,
+  sendLoginFailure,
+  sendJoin,
+  sendJoinSuccess,
+  sendJoinFailure,
+  setUser,
+  setUserSuccess,
+  setUserFailure,
+  setPrevUrl,
+  setPrevUrlSuccess,
+} from 'src/services/user/actions'
 
 export type Articles =
   | ReturnType<typeof getArticles>
@@ -60,3 +75,18 @@ export type Auth =
   | ReturnType<typeof sendAuthConfirm>
   | ReturnType<typeof sendAuthConfirmSuccess>
   | ReturnType<typeof sendAuthConfirmFailure>
+
+export type User =
+  | ReturnType<typeof startSetUserLoading>
+  | ReturnType<typeof endSetUserLoading>
+  | ReturnType<typeof setUser>
+  | ReturnType<typeof setUserSuccess>
+  | ReturnType<typeof setUserFailure>
+  | ReturnType<typeof sendLogin>
+  | ReturnType<typeof sendLoginSuccess>
+  | ReturnType<typeof sendLoginFailure>
+  | ReturnType<typeof sendJoin>
+  | ReturnType<typeof sendJoinSuccess>
+  | ReturnType<typeof sendJoinFailure>
+  | ReturnType<typeof setPrevUrl>
+  | ReturnType<typeof setPrevUrlSuccess>
