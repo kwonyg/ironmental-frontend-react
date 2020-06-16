@@ -6,7 +6,7 @@ import { sendJoin, sendLogin } from 'src/services/user/actions'
 
 const Callback: React.FC<RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch()
-  const code = apiUtils.querystringToObj(useLocation().search).code.toString()
+  const code = apiUtils.querystringToObj(useLocation().search).code as string
   const prevUrl = apiUtils.querystringToObj(useLocation().search).prevUrl
 
   useEffect(() => {
