@@ -15,50 +15,52 @@ export const SET_PREV_URL = 'user/SET_PREV_URL' as const
 export const SET_PREV_URL_SUCCESS = 'user/SET_PREV_URL_SUCCESS' as const
 export const SET_PREV_URL_FAILURE = 'user/SET_PREV_URL_FAILURE' as const
 
-export const startSetUserLoading = () => ({ type: START_SET_USER_LOADING })
-export const endSetUserLoading = () => ({ type: END_SET_USER_LOADING })
-export const sendLogin = (code: string) => ({
-  type: SEND_LOGIN,
-  payload: { code },
-})
-export const sendLoginSuccess = (code: string) => ({
-  type: SEND_LOGIN_SUCCESS,
-  payload: { code },
-})
-export const sendLoginFailure = (code: string) => ({
-  type: SEND_LOGIN_FAILURE,
-  payload: { code },
-})
-export const sendJoin = (code: string) => ({
-  type: SEND_JOIN,
-  payload: { code },
-})
-export const sendJoinSuccess = (code: string) => ({
-  type: SEND_JOIN_SUCCESS,
-  payload: { code },
-})
-export const sendJoinFailure = (code: string) => ({
-  type: SEND_JOIN_FAILURE,
-  payload: { code },
-})
-export const setUser = (user: PropsTypes.User) => ({
-  type: SET_USER,
-  payload: { user },
-})
-export const setUserSuccess = (user: PropsTypes.User) => ({
-  type: SET_USER_SUCCESS,
-  payload: { user },
-})
-export const setUserFailure = (error: Error) => ({
-  type: SET_USER_FAILURE,
-  payload: { error },
-})
-export const setPrevUrl = (prevUrl: string) => ({
-  type: SET_PREV_URL,
-  payload: { prevUrl },
-})
+export const actions = {
+  startSetUserLoading: () => ({ type: START_SET_USER_LOADING }),
+  endSetUserLoading: () => ({ type: END_SET_USER_LOADING }),
+  sendLogin: (code: string) => ({
+    type: SEND_LOGIN,
+    payload: { code },
+  }),
+  sendLoginSuccess: (code: string) => ({
+    type: SEND_LOGIN_SUCCESS,
+    payload: { code },
+  }),
+  sendLoginFailure: (code: string) => ({
+    type: SEND_LOGIN_FAILURE,
+    payload: { code },
+  }),
+  sendJoin: (code: string) => ({
+    type: SEND_JOIN,
+    payload: { code },
+  }),
+  sendJoinSuccess: (code: string) => ({
+    type: SEND_JOIN_SUCCESS,
+    payload: { code },
+  }),
+  sendJoinFailure: (code: string) => ({
+    type: SEND_JOIN_FAILURE,
+    payload: { code },
+  }),
+  setUser: (user: PropsTypes.User) => ({
+    type: SET_USER,
+    payload: { user },
+  }),
+  setUserSuccess: (user: PropsTypes.User) => ({
+    type: SET_USER_SUCCESS,
+    payload: { user },
+  }),
+  setUserFailure: (error: Error) => ({
+    type: SET_USER_FAILURE,
+    payload: { error },
+  }),
+  setPrevUrl: (prevUrl: string) => ({
+    type: SET_PREV_URL,
+    payload: { prevUrl },
+  }),
 
-export const setPrevUrlSuccess = (prevUrl: string) => ({
-  type: SET_PREV_URL_SUCCESS,
-  payload: { prevUrl },
-})
+  setPrevUrlSuccess: (prevUrl: string) => ({
+    type: SET_PREV_URL_SUCCESS,
+    payload: { prevUrl },
+  }),
+}

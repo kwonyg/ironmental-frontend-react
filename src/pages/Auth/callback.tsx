@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { apiUtils } from 'src/utils'
 import { useDispatch } from 'react-redux'
-import { sendJoin, sendLogin } from 'src/services/user/actions'
+import { actions } from 'src/services/user/actions'
 import { routePath } from 'src/constants'
 
 const Callback: React.FC = () => {
@@ -12,9 +12,9 @@ const Callback: React.FC = () => {
 
   useEffect(() => {
     if (prevUrl === routePath.JOIN) {
-      dispatch(sendJoin(code))
+      dispatch(actions.sendJoin(code))
     } else if (prevUrl === routePath.LOGIN) {
-      dispatch(sendLogin(code))
+      dispatch(actions.sendLogin(code))
     }
   }, [dispatch, code, prevUrl])
 
