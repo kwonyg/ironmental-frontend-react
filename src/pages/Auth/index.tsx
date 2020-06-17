@@ -62,4 +62,5 @@ const ButtonContainer = styled.div`
 `
 
 const Bottom = styled.div``
+
 export default Auth
