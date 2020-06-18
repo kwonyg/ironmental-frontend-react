@@ -7,6 +7,7 @@ import ArchiveArticle from 'src/pages/Article'
 import AuthResult from 'src/pages/AuthResult'
 import SubscribeResult from 'src/pages/SubscribeResult'
 import Auth from 'src/pages/Auth'
+import Profile from 'src/pages/Profile'
 import Error from 'src/pages/Error'
 import Callback from './pages/Auth/callback'
 import { routePath } from 'src/constants'
@@ -29,6 +30,7 @@ function App() {
         />
         <DefaultLayout path={routePath.LOGIN} component={Auth} />
         <DefaultLayout path={routePath.JOIN} component={Auth} />
+        <DefaultLayout path={routePath.PROFILE} component={Profile} />
         <Route path="/auth/callback" component={Callback} />
         <DefaultLayout path="*" component={Error} />
       </Switch>

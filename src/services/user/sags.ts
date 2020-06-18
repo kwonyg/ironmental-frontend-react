@@ -9,7 +9,6 @@ const sendLoginSaga = function*(action: AnyAction) {
     const { code } = action.payload
     const response = yield call(sendLogin, code)
 
-    const message = response.data.message
     const user = response.data.data
 
     yield put(actions.setUser(user))
@@ -26,7 +25,6 @@ const sendJoinSaga = function*(action: AnyAction) {
     const { code } = action.payload
     const response = yield call(sendJoin, code)
 
-    const message = response.data.message
     const user = response.data.data
 
     alert('가입성공!!')

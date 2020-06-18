@@ -1,6 +1,6 @@
 import React from 'react'
-import { Avatar } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
+// import { Avatar } from 'antd'
+// import { UserOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { routePath } from 'src/constants'
