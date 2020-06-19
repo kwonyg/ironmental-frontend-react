@@ -13,9 +13,6 @@ const initialState: StateTypes.UserState = {
     userId: '',
     email: '',
     username: '',
-    /* isSubscribe: false,
-    likes: [],
-    favoriteTags: [], */
   },
   prevUrl: '',
   error: null,

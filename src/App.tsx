@@ -1,11 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Router } from 'react-router-dom'
+import { routeUtils } from 'src/utils'
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from 'src/pages/Home'
 import Archive from 'src/pages/Articles'
 import ArchiveArticle from 'src/pages/Article'
 import AuthResult from 'src/pages/AuthResult'
-import SubscribeResult from 'src/pages/SubscribeResult'
 import Auth from 'src/pages/Auth'
 import Profile from 'src/pages/Profile'
 import Error from 'src/pages/Error'
@@ -14,7 +14,7 @@ import { routePath } from 'src/constants'
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router history={routeUtils.history}>
       <Switch>
         <DefaultLayout path={routePath.HOME} component={Home} exact={true} />
         <DefaultLayout
@@ -24,17 +24,13 @@ function App() {
         />
         <DefaultLayout path={routePath.ARTICLE} component={ArchiveArticle} />
         <DefaultLayout path={routePath.AUTH_RESULT} component={AuthResult} />
-        <DefaultLayout
-          path={routePath.SUBSCRIBE_RESULT}
-          component={SubscribeResult}
-        />
         <DefaultLayout path={routePath.LOGIN} component={Auth} />
         <DefaultLayout path={routePath.JOIN} component={Auth} />
         <DefaultLayout path={routePath.PROFILE} component={Profile} />
-        <Route path="/auth/callback" component={Callback} />
-        <DefaultLayout path="*" component={Error} />
+        <Route path={routePath.AUTH_CALLBACK} component={Callback} />
+        <DefaultLayout path={['/error', '*']} component={Error} exact={true} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   )
 }
 

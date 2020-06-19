@@ -91,3 +91,17 @@ export const articles = {
   ],
   nextLink: '',
 }
+
+export const user = {
+  loading: false,
+  user: {
+    userId: '',
+    email: '',
+    username: '',
+    isSubscribe: false,
+    likes: [],
+    favoriteTags: [],
+  },
+  prevUrl: '',
+  error: null,
+}

@@ -4,7 +4,6 @@
 
 **GET** `/v2/article/:id`
 
-- Aritcles: [Article]
 - Article
 
   ```javascript
@@ -14,10 +13,12 @@
     title:'CORS 란',
     text:'CORS text or none',
     articleLink:"https://google.com",
-    selfLink: '/articles/5cf142b857cd51f683cd928e',
     commentCount:23,
     likesCount:42,
     comments:['5cf1423357cd510271cd9289','5cf1423357cd510271cd9289','5cf1423357cd510271cd9289','5cf1423357cd510271cd9289','5cf1423357cd510271cd9289','5cf1423357cd510271cd9289','5cf1423357cd510271cd9289',]
+    links:{
+      self: '/articles/5cf142b857cd51f683cd928e'
+    }
   }
   ```
 

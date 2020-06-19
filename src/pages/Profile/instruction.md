@@ -1,11 +1,10 @@
-# Aticles Page
+# Profile Page
 
 ## 필요 API 데이터
 
-**GET** `/v2/articles`
+**GET** `/v2/users/@:userId`
 
-- Aritcles: [Article]
-- Article
+- user
 
   ```javascript
   {
