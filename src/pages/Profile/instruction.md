@@ -9,14 +9,12 @@
   ```javascript
   {
     id: '5cf142b857cd51f683cd928e',
-    tags:['gres','gewag'],
-    title:'CORS 란',
-    text:'CORS text or none',
+    username:'CORS 란',
+    email:'nana@gmail.com',
     articleLink:"https://google.com",
     commentCount:23,
     likesCount:42,
-    links:{
-      self: '/articles/5cf142b857cd51f683cd928e'
-    }
+    likesPosts:['5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e']
+    likesComments: ['5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e']
   }
   ```

@@ -4,6 +4,8 @@
 
 **GET** `/v2/article/:id`
 
+### schema
+
 - Article
 
   ```javascript
@@ -26,13 +28,23 @@
 
 **GET** `/v2/comments`
 
+### querystring
+
+- `postId`
+
+### schema
+
 - Comments:[Comment]
 - Comment
 
   ```javascript
   {
     id:"5cf1423357cd510271cd9289",
-    author: "5cf1423357cd510271cd9289", // user id가 맞겠지?
+    author:{
+      userId: "5cf1423357cd510271cd9289",
+      username:'someone',
+      profileImageUrl: 'https:// ....'
+    },
     text:"article text or none",
     created:"2019-05-31T15:03:15.726Z",
     updated:"2019-05-31T15:03:15.727Z",
@@ -45,6 +57,12 @@
 ---
 
 **GET** `/v2/threads`
+
+### querystring
+
+- `commentId`
+
+### schema
 
 - Threads: [Threads]
 - Thread
