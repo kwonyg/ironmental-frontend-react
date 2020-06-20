@@ -71,9 +71,14 @@
   {
       id:"5cf1423357cd510271cd9289",
       author: "5cf1423357cd510271cd9289", // user id가 맞겠지?
+      to:
       text:"article text or none",
       created:"2019-05-31T15:03:15.726Z",
       updated:"2019-05-31T15:03:15.727Z",
+      to: '@username'
       likesCount:43,
     }
+  ```
+
+  ```javascript
   ```

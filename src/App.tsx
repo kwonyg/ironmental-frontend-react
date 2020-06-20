@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Router } from 'react-router-dom'
+import { Switch, Route, Router } from 'react-router-dom'
 import { routeUtils } from 'src/utils'
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from 'src/pages/Home'
@@ -28,7 +28,11 @@ function App() {
         <DefaultLayout path={routePath.JOIN} component={Auth} />
         <DefaultLayout path={routePath.PROFILE} component={Profile} />
         <Route path={routePath.AUTH_CALLBACK} component={Callback} />
-        <DefaultLayout path={['/error', '*']} component={Error} exact={true} />
+        <DefaultLayout
+          path={[routePath.ERROR, '*']}
+          component={Error}
+          exact={true}
+        />
       </Switch>
     </Router>
   )
