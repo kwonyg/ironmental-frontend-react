@@ -2,6 +2,7 @@ import React from 'react'
 import ArticleListItem from 'src/components/Articles/ArticleListItem'
 import styled from 'styled-components'
 
+// TODO: API 데이터에서 Likes 아이템이 article인지 comment인지 구분 할 수 있는 타입이 필요함.
 const LikesList: React.FC = () => {
   return (
     <LikesListContainer>
@@ -14,7 +15,9 @@ const LikesList: React.FC = () => {
 }
 
 const LikesListContainer = styled.div`
-  margin: 0 auto;
+  h2 {
+    font-size: 1.5rem;
+  }
 `
 
 export default LikesList

@@ -5,6 +5,7 @@ import { Divider } from 'antd'
 import Doc from './instruction.md'
 import UserInfo from './UserInfo'
 import ActivityInfo from './ActivityInfo'
+import LikesList from './LikesList'
 import styled from 'styled-components'
 
 const Profile: React.FC = () => {
@@ -14,6 +15,7 @@ const Profile: React.FC = () => {
       <Divider />
       <ActivityInfo />
       <Divider />
+      <LikesList />
     </Section>
   )
 }

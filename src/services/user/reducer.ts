@@ -1,9 +1,11 @@
 import { StateTypes, ActionTypes } from 'src/types'
 import {
-  SET_USER,
-  SET_USER_FAILURE,
-  START_SET_USER_LOADING,
-  END_SET_USER_LOADING,
+  SEND_LOGIN_SUCCESS,
+  SEND_LOGIN_FAILURE,
+  SEND_JOIN_SUCCESS,
+  SEND_JOIN_FAILURE,
+  START_USER_LOADING,
+  END_USER_LOADING,
   SET_PREV_URL,
 } from './actions'
 
@@ -23,23 +25,25 @@ export const userReducer = (
   action: ActionTypes.User
 ) => {
   switch (action.type) {
-    case SET_USER: {
+    case SEND_LOGIN_SUCCESS:
+    case SEND_JOIN_SUCCESS: {
       const { user } = action.payload
 
       return { ...state, user, error: null }
     }
 
-    case SET_USER_FAILURE: {
+    case SEND_LOGIN_FAILURE:
+    case SEND_JOIN_FAILURE: {
       const { error } = action.payload
 
       return { ...state, user: null, error }
     }
 
-    case START_SET_USER_LOADING: {
+    case START_USER_LOADING: {
       return { ...state, loading: true }
     }
 
-    case END_SET_USER_LOADING: {
+    case END_USER_LOADING: {
       return { ...state, loading: false }
     }
 

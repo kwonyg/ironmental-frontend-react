@@ -11,9 +11,9 @@ const sendLoginSaga = function*(action: AnyAction) {
 
     const user = response.data.data
 
-    yield put(actions.setUser(user))
+    yield put(actions.sendLoginSuccess(user))
   } catch (e) {
-    yield put(actions.setUserFailure(e))
+    yield put(actions.sendLoginFailure(e))
   } finally {
     yield put(actions.endSetUserLoading())
   }
@@ -29,10 +29,10 @@ const sendJoinSaga = function*(action: AnyAction) {
 
     alert('가입성공!!')
     /* console.log('가입 완료!!', response.data) */
-    yield put(actions.setUser(user))
+    yield put(actions.sendJoinSuccess(user))
   } catch (e) {
     // console.log('가입 실패 ㅠㅠ')
-    yield put(actions.setUserFailure(e))
+    yield put(actions.sendJoinFailure(e))
   } finally {
     yield put(actions.endSetUserLoading())
   }
