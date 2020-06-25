@@ -3,13 +3,14 @@ import { Result, Button } from 'antd'
 import { PropsTypes } from 'src/types'
 import { errorMessage, routePath } from 'src/constants'
 import { routeUtils } from 'src/utils'
+import { useLocation } from 'react-router-dom'
 
-interface Props {
+interface LocationState {
   errorCode: 404 | 500 | '404' | '500' | 'unknown'
 }
 
 const errorResults: {
-  [key in Props['errorCode']]: PropsTypes.ErrorInfo
+  [key in LocationState['errorCode']]: PropsTypes.ErrorInfo
 } = {
   unknown: {
     status: 'unknown',
@@ -21,9 +22,11 @@ const errorResults: {
 }
 
 // TODO: 구독 결과 페이지의 오류랑은 별개, 구독 결과 페이지 메세지는 승욱이랑 의논
-const Error: React.FC<Props> = props => {
-  // console.log('errorCode:', props)
-  const errorType = errorResults[props.errorCode] ? props.errorCode : 'unknown'
+const Error: React.FC = () => {
+  const locationState = useLocation().state as LocationState
+  const errorCode = locationState ? locationState.errorCode : '404'
+
+  const errorType = errorResults[errorCode] ? errorCode : 'unknown'
 
   const handleClick = () => {
     routeUtils.push(routePath.HOME)

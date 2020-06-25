@@ -30,7 +30,7 @@ function App() {
         <Route path={routePath.AUTH_CALLBACK} component={Callback} />
         <DefaultLayout
           path={[routePath.ERROR, '*']}
-          component={() => <Error errorCode={'404'} />}
+          component={Error}
           exact={true}
         />
       </Switch>

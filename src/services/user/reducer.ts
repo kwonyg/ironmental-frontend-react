@@ -35,6 +35,7 @@ export const userReducer = (
 
       return { ...state, user, error: null }
     }
+
     case LOGOUT: {
       return { ...state, user: null }
     }

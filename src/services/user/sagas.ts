@@ -1,9 +1,30 @@
-import { SEND_LOGIN, SEND_JOIN, CHECK_LOGGED_IN, actions } from './actions'
+import {
+  SEND_LOGIN,
+  SEND_JOIN,
+  CHECK_LOGGED_IN,
+  actions,
+  LOGOUT,
+} from './actions'
 import { sendJoin, sendLogin, checkLoggedIn } from './request'
 import { AnyAction } from 'redux'
 import { put, call, takeEvery } from 'redux-saga/effects'
 import { routeUtils, localStorageUtils } from 'src/utils'
 import { routePath } from 'src/constants'
+
+const sendLogoutSaga = function*(action: AnyAction) {
+  yield put(actions.startSetUserLoading())
+
+  try {
+    yield put(actions.logout())
+  } catch (e) {
+    if (e.response) {
+      routeUtils.push(routePath.ERROR, e.response.status)
+    }
+  } finally {
+    localStorageUtils.removeUser()
+    yield put(actions.endSetUserLoading())
+  }
+}
 
 const sendLoginSaga = function*(action: AnyAction) {
   yield put(actions.startSetUserLoading())
@@ -17,7 +38,10 @@ const sendLoginSaga = function*(action: AnyAction) {
     yield call(routeUtils.push, routePath.HOME)
   } catch (e) {
     yield put(actions.sendLoginFailure(e))
-    yield call(routeUtils.gotoError, '500') // FIXME: 500인자가 넘어가지 않는 부분 고치기
+
+    if (e.response) {
+      yield call(routeUtils.gotoError, e.status)
+    }
   } finally {
     yield put(actions.endSetUserLoading())
   }
@@ -37,7 +61,9 @@ const sendJoinSaga = function*(action: AnyAction) {
     yield put(actions.sendJoinSuccess(user))
   } catch (e) {
     yield put(actions.sendJoinFailure(e))
-    yield call(routeUtils.gotoError, '500')
+    if (e.response) {
+      yield call(routeUtils.gotoError, e.status)
+    }
   } finally {
     yield put(actions.endSetUserLoading())
   }
@@ -53,6 +79,10 @@ const checkLoggedInSaga = function*(action: AnyAction) {
   } catch (e) {
     localStorageUtils.removeUser()
     yield put(actions.checkLoggedInFailure(e))
+
+    if (e.response) {
+      yield call(routeUtils.gotoError, e.status)
+    }
   } finally {
     yield put(actions.endSetUserLoading())
   }
@@ -62,4 +92,5 @@ export function* rootUserSaga() {
   yield takeEvery(SEND_LOGIN, sendLoginSaga)
   yield takeEvery(SEND_JOIN, sendJoinSaga)
   yield takeEvery(CHECK_LOGGED_IN, checkLoggedInSaga)
+  yield takeEvery(LOGOUT, sendLogoutSaga)
 }
