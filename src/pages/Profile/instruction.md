@@ -8,13 +8,13 @@
 
   ```javascript
   {
-    id: '5cf142b857cd51f683cd928e',
+    userId: '5cf142b857cd51f683cd928e',
     username:'CORS 란',
     email:'nana@gmail.com',
-    articleLink:"https://google.com",
     commentCount:23,
     likesCount:42,
-    likesPosts:['5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e']
-    likesComments: ['5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e']
+    likes:['5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e'...], // (Article | Comment)[]
+    comment:['5cf142b857cd51f683cd928e','5cf142b857cd51f683cd928e'...], // Comment[]
+    favoriteTags: [],
   }
   ```
