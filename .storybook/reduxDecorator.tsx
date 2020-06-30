@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { action } from '@storybook/addon-actions'
-import { article, articles, user } from './mockStoreData'
+import { article, articles, user, profile } from './mockStoreData'
 
 // const store = configureStore()
 const store = {
@@ -9,6 +9,7 @@ const store = {
     article,
     articles,
     user,
+    profile,
   }),
   subscribe: () => 0,
   dispatch: action('dispatch'),
