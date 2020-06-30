@@ -95,9 +95,9 @@ export const articles = {
 export const user = {
   loading: false,
   user: {
-    userId: '',
-    email: '',
-    username: '',
+    email: 'andamirocll@gmail.com',
+    username: 'YoungGeun Kwon',
+    userId: '5ee8912531fcbb00088ffc4d',
     isSubscribe: false,
     likes: [
       {
