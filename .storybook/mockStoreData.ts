@@ -221,6 +221,67 @@ export const profile = {
         articleLink: 'https://google.com',
       },
     ],
-    comments: [],
+    comments: [
+      {
+        id: 'faewklm',
+        text: '와.. 대박이네요 감사합니다.',
+        author: {
+          userId: 'fmkelawfmklewa',
+          userName: '천우희',
+        },
+        created: '2019-05-31T15:05:28.527Z',
+        updated: '2019-05-31T15:05:28.527Z',
+        likesCount: 132,
+        threadCount: 132,
+        links: {
+          threads: '/fekwaf',
+        },
+      },
+      {
+        id: 'faewklm',
+        text: '와.. 대박이네요 감사합니다.',
+        author: {
+          userId: 'fmkelawfmklewa',
+          userName: '천우희',
+        },
+        created: '2019-05-31T15:05:28.527Z',
+        updated: '2019-05-31T15:05:28.527Z',
+        likesCount: 132,
+        threadCount: 132,
+        links: {
+          threads: '/fekwaf',
+        },
+      },
+      {
+        id: 'faewklm',
+        text: '와.. 대박이네요 감사합니다.',
+        author: {
+          userId: 'fmkelawfmklewa',
+          userName: '천우희',
+        },
+        created: '2019-05-31T15:05:28.527Z',
+        updated: '2019-05-31T15:05:28.527Z',
+        likesCount: 132,
+        threadCount: 132,
+        links: {
+          threads: '/fekwaf',
+        },
+      },
+      {
+        id: 'faewklm',
+        text: '와.. 대박이네요 감사합니다.',
+        author: {
+          userId: 'fmkelawfmklewa',
+          userName: '천우희',
+        },
+        created: '2019-05-31T15:05:28.527Z',
+        updated: '2019-05-31T15:05:28.527Z',
+        likesCount: 132,
+        threadCount: 132,
+        links: {
+          threads: '/fekwaf',
+        },
+      },
+    ],
   },
 }

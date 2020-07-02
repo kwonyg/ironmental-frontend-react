@@ -33,7 +33,7 @@ const LikesList: React.FC = () => {
   )
 }
 
-const LikesListContainer = styled.div`
+const LikesListContainer = styled.section`
   margin: 0 auto;
   max-width: 700px;
   h2 {
