@@ -1,5 +1,5 @@
-import React from 'react'
-import { Avatar, Button } from 'antd'
+import React, { useState } from 'react'
+import { Avatar, Button, Switch } from 'antd'
 import { UserOutlined, GithubOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import { getLoggedInUser } from 'src/services/user/selectors'
@@ -9,6 +9,8 @@ import { routePath } from 'src/constants'
 import { actions } from 'src/services/user/actions'
 
 const UserInfo: React.FC = () => {
+  // TODO: 완성되면 action으로 빼기
+  const [subscribe, setSubscribe] = useState(true)
   const dispatch = useDispatch()
   const user = useSelector(getLoggedInUser)
 
@@ -18,6 +20,10 @@ const UserInfo: React.FC = () => {
 
     // FIXME: 로그아웃 디스패치 시 브라우저가 멈춰버림
     dispatch(actions.logout())
+  }
+
+  const onSubscribe = () => {
+    setSubscribe(!subscribe)
   }
 
   return (
@@ -39,8 +45,16 @@ const UserInfo: React.FC = () => {
       </ProfileContainer>
       {!!user?.userId && (
         <ButtonContainer>
-          <StyledButton>탈퇴</StyledButton>
-          <StyledButton onClick={onClickLogout}>로그아웃</StyledButton>
+          <Switch
+            checkedChildren="구독 중"
+            unCheckedChildren="구독 하기"
+            checked={subscribe}
+            onChange={onSubscribe}
+          />
+          <div>
+            <StyledButton>탈퇴</StyledButton>
+            <StyledButton onClick={onClickLogout}>로그아웃</StyledButton>
+          </div>
         </ButtonContainer>
       )}
     </>
@@ -67,9 +81,11 @@ const StyledAvatar = styled(Avatar)`
 `
 
 const ButtonContainer = styled.div`
-  margin-left: 150px;
+  margin: 0 auto;
+  width: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const StyledButton = styled(Button)`

@@ -3,24 +3,17 @@ import styled from 'styled-components'
 import { Divider } from 'antd'
 import { useSelector } from 'react-redux'
 import { profileSelector } from 'src/services/profile/selectors'
-import { PropsTypes } from 'src/types'
+import { validators } from 'src/utils/'
 import ArticleListItem from 'src/components/Articles/ArticleListItem'
 import CommentListItem from 'src/components/Comments/CommentListItem'
 
-const isArticle = (
-  likeItem: PropsTypes.Article | PropsTypes.Comment
-): likeItem is PropsTypes.Article => {
-  return (likeItem as PropsTypes.Article).articleLink !== undefined
-}
-
-// TODO: API 데이터에서 Likes 아이템이 article인지 comment인지 구분 할 수 있는 타입이 필요함.
 const LikesList: React.FC = () => {
   const {
     profile: { likes },
   } = useSelector(profileSelector)
 
   const likeList = likes.map((likeItem, index) => {
-    if (isArticle(likeItem)) {
+    if (validators.isArticle(likeItem)) {
       return (
         <>
           <ArticleListItem key={index} type="profile" article={likeItem} />
