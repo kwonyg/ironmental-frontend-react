@@ -37,7 +37,14 @@ export const userReducer = (
     }
 
     case LOGOUT: {
-      return { ...state, user: null }
+      return {
+        ...state,
+        user: {
+          userId: '',
+          email: '',
+          username: '',
+        },
+      }
     }
 
     case CHECK_LOGGED_IN_FAILURE:

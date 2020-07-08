@@ -18,7 +18,9 @@ const getArticleSaga = function*(action: AnyAction) {
 
     // TODO: e.response가 없을 수 도 있나??
     if (e.response) {
-      yield call(routeUtils.gotoError, e.response.status)
+      const errorResponse = e.response.data.error
+
+      yield call(routeUtils.gotoError, errorResponse)
     }
   } finally {
     yield put(actions.endArticleLoading())

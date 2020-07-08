@@ -34,7 +34,23 @@ export interface Comment {
 }
 
 export interface ErrorInfo {
-  status: string
+  status:
+    | '404'
+    | 403
+    | 404
+    | 500
+    | '403'
+    | '500'
+    | 'success'
+    | 'error'
+    | 'info'
+    | 'warning'
+    | undefined
   title: number | string
-  subTitle: string
+  message: string
+}
+
+export interface ErrorResponseData {
+  status: string | number
+  message: string
 }

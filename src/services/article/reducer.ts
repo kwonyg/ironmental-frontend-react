@@ -6,7 +6,7 @@ import {
 } from './actions'
 import { ActionTypes, StateTypes } from 'src/types'
 
-const initialState: StateTypes.ArticleState = {
+export const initialState: StateTypes.ArticleState = {
   error: null,
   loading: false,
   article: {

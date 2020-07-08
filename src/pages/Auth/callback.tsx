@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
+import Lottie from 'react-lottie'
 import { useLocation, RouteComponentProps } from 'react-router-dom'
 import { apiUtils } from 'src/utils'
 import { useDispatch } from 'react-redux'
 import { actions } from 'src/services/user/actions'
 import { routePath } from 'src/constants'
+import LoadingAnimation from 'src/assets/animations/loading.json'
 
 const Callback: React.FC<RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch()
@@ -18,7 +20,17 @@ const Callback: React.FC<RouteComponentProps> = ({ history }) => {
     }
   }, [dispatch, code, prevUrl, history])
 
-  return <div>인증주웅..!</div>
+  return (
+    <div>
+      인증주웅..!
+      <Lottie
+        options={{
+          animationData: LoadingAnimation,
+          loop: true,
+        }}
+      />
+    </div>
+  )
 }
 
 export default Callback
