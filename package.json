@@ -48,6 +48,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2",
     "prettier-eslint": "^9.0.1",
+    "redux-saga-test-plan": "^4.0.0-rc.3",
     "ts-jest": "^26.0.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",

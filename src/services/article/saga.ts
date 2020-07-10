@@ -12,6 +12,7 @@ const getArticleSaga = function*(action: AnyAction) {
     const { id } = action.payload
 
     const response = yield call(fetchArticleById, id)
+
     yield put(actions.getArticleByIdSuccess(response.data))
   } catch (e) {
     yield put(actions.getArticleByIdFailure(e))

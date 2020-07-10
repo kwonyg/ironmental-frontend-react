@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Result, Button, message } from 'antd'
+import { Result, Button } from 'antd'
 import { PropsTypes } from 'src/types'
 import { errorMessage, routePath } from 'src/constants'
 import { routeUtils } from 'src/utils'
