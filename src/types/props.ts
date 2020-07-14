@@ -12,7 +12,7 @@ export interface Article {
   title: string
   tags: string[]
   text: string
-  articleLink: string
+  articleLink?: string | undefined
   created: string
   updated: string
 }

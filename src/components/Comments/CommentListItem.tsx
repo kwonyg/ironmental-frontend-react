@@ -1,14 +1,37 @@
 import React, { useState } from 'react'
 import { Comment, Tooltip, Avatar } from 'antd'
 import { LikeOutlined, LikeFilled, MessageOutlined } from '@ant-design/icons'
+import ReactMarkdown from 'react-markdown'
+import 'github-markdown-css'
 import styled from 'styled-components'
 import ThreadList from 'src/components/Threads/ThreadList'
+import 'github-markdown-css'
 
 type Props = {
   type?: 'article' | 'profile'
 }
 
 const CommentListItem: React.FC<Props> = ({ type = 'article' }) => {
+  const markDown = `# ironmental-frontend-react
+
+  아이언멘탈 리뉴얼 프로젝트
+
+  ## Core External Library
+
+  - ant.design
+  - Lottie
+
+  ## Need API data Doc
+
+  https://ironmental-story.netlify.app/ powered by storybook
+
+  CRA Default README.md
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+  ## Available Scripts
+
+  In the project directory, you can run:`
+
   // FIXME: API 완성되면 리덕스 상태로 빼기
   const [likes, setLikes] = useState(false)
   const [showThread, setShowThread] = useState(false)
@@ -53,12 +76,9 @@ const CommentListItem: React.FC<Props> = ({ type = 'article' }) => {
           />
         }
         content={
-          <p>
-            연예계 실증나서 개발공부 시작했는데 너무 좋은거 같애요.연예계
-            실증나서 개발공부 시작했는데 너무 좋은거 같애요연예계 실증나서
-            개발공부 시작했는데 너무 좋은거 같애요연예계 실증나서 개발공부
-            시작했는데 너무 좋은거 같애요연예계 실증나서 개발공부 시작했는데
-          </p>
+          <div className="markdown-body">
+            <ReactMarkdown source={markDown} />
+          </div>
         }
         datetime={
           <Tooltip title={'시간'}>

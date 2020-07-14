@@ -8,7 +8,7 @@ import {
   GET_ARTICLES_SUCCESS,
 } from './actions'
 
-const initialState: StateTypes.ArticlesState = {
+export const initialState: StateTypes.ArticlesState = {
   error: null,
   loading: false,
   articles: [],

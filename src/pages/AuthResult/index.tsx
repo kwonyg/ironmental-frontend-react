@@ -17,6 +17,7 @@ const AuthResult: React.FC = () => {
   // useEffect(() => {
   //   dispatch(sendAuthConfirm())
   // }, [dispatch, subscriberId])
+
   return (
     <AuthResultContainer>
       {error ? (

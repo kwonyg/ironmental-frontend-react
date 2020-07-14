@@ -1,5 +1,5 @@
-export const START_SEARCH_LOADING = 'search/START_SEARCH_LOADING'
-export const END_SEARCH_LOADING = 'search/END_SEARCH_LOADING'
+export const START_SEARCH_LOADING = 'search/START_SEARCH_LOADING' as const
+export const END_SEARCH_LOADING = 'search/END_SEARCH_LOADING' as const
 export const SEARCH_ARTICLES = 'search/SEARCH_ARTICLES' as const
 export const SEARCH_ARTICLES_SUCCESS = 'search/SEARCH_ARTICLES_SUCCESS' as const
 export const SEARCH_ARTICLES_FAILURE = 'search/SEARCH_ARTICLES_FAILURE' as const

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { validators } from 'src/utils'
 import { keyCodes } from 'src/constants'
 import { actions } from 'src/services/subscribe/actions'
+import ErrorMessage from 'src/components/ErrorMessage'
 
 interface Props {
   closeModal: () => void
@@ -80,7 +81,7 @@ const EmailFormModal: React.FC<Props> = ({ closeModal, showResult }) => {
           구독하기
         </Button>
       </InputContainer>
-      {iserror && <ErrorMessage>이메일을 다시 확인해주세요</ErrorMessage>}
+      {iserror && <ErrorMessage text={'이메일을 다시 확인해주세요'} />}
     </Modal>
   )
 }
@@ -107,10 +108,6 @@ const StyledInput = styled(Input)<{ iserror: number }>`
       return `border: 1px solid red;color: red;`
     }
   }}
-`
-
-const ErrorMessage = styled.div`
-  color: red;
 `
 
 export default EmailFormModal
