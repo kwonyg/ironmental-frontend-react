@@ -1,4 +1,4 @@
-import { PropsTypes } from 'src/types'
+import { TypedProps } from 'src/types'
 
 export const START_ARTICLES_LOADING = 'articles/START_ARTICLES_LOADING' as const
 export const END_ARTICLES_LOADING = 'articles/END_ARTICLES_LOADING' as const
@@ -16,7 +16,7 @@ export const actions = {
     type: GET_ARTICLES,
     payload: { offset, limit },
   }),
-  getArticlesSuccess: (articles: PropsTypes.Article[], nextLink: string) => ({
+  getArticlesSuccess: (articles: TypedProps.Article[], nextLink: string) => ({
     type: GET_ARTICLES_SUCCESS,
     payload: { articles, nextLink },
   }),
@@ -29,7 +29,7 @@ export const actions = {
     payload: { offset, limit },
   }),
   getMoreArticlesSuccess: (
-    articles: PropsTypes.Article[],
+    articles: TypedProps.Article[],
     nextLink: string
   ) => ({
     type: GET_MORE_ARTICLES_SUCCESS,

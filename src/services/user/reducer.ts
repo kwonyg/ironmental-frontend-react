@@ -1,4 +1,4 @@
-import { StateTypes, ActionTypes } from 'src/types'
+import { TypedState, TypedActions } from 'src/types'
 import {
   SEND_LOGIN_SUCCESS,
   SEND_LOGIN_FAILURE,
@@ -12,7 +12,7 @@ import {
   LOGOUT,
 } from './actions'
 
-const initialState: StateTypes.UserState = {
+const initialState: TypedState.UserState = {
   loading: false,
   user: {
     userId: '',
@@ -23,8 +23,8 @@ const initialState: StateTypes.UserState = {
 }
 
 export const userReducer = (
-  state: StateTypes.UserState = initialState,
-  action: ActionTypes.User
+  state: TypedState.UserState = initialState,
+  action: TypedActions.User
 ) => {
   switch (action.type) {
     case SET_USER:

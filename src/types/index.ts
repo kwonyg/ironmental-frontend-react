@@ -1,5 +1,5 @@
-import * as StateTypes from './state'
-import * as ActionTypes from './actions'
-import * as PropsTypes from './props'
+import * as TypedState from './state'
+import * as TypedActions from './actions'
+import * as TypedProps from './props'
 
-export { PropsTypes, ActionTypes, StateTypes }
+export { TypedProps, TypedActions, TypedState }

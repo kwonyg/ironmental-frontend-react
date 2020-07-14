@@ -1,9 +1,7 @@
 import * as React from 'react'
 
-// interface Props {}
-
-const AuthReulst: React.FunctionComponent = () => {
+const SubscribeResult: React.FC = () => {
   return <div>loading and result</div>
 }
 
-export default AuthReulst
+export default SubscribeResult

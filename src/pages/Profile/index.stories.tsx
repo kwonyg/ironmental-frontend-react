@@ -35,5 +35,3 @@ export default {
 }
 
 export const Default: React.FC = () => <DefaultLayout component={Profile} />
-
-// export const Default: React.FC = () => <DefaultLayout component={Profile} />

@@ -1,4 +1,4 @@
-import { PropsTypes } from 'src/types'
+import { TypedProps } from 'src/types'
 
 export const START_ARTICLE_LOADING = 'article/START_ARTICLE_LOADING' as const
 export const END_ARTICLE_LOADING = 'article/END_ARTICLE_LOADING' as const
@@ -13,7 +13,7 @@ export const actions = {
     type: GET_ARTICLE,
     payload: { id },
   }),
-  getArticleByIdSuccess: (article: PropsTypes.Article) => ({
+  getArticleByIdSuccess: (article: TypedProps.Article) => ({
     type: GET_ARTICLE_SUCCESS,
     payload: { article },
   }),

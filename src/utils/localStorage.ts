@@ -1,5 +1,5 @@
-import { PropsTypes } from 'src/types'
-export const setUser = (user: PropsTypes.User) => {
+import { TypedProps } from 'src/types'
+export const setUser = (user: TypedProps.User) => {
   try {
     localStorage.setItem('user', JSON.stringify(user))
   } catch (e) {

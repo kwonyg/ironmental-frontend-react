@@ -5,7 +5,7 @@ import { images } from 'src/assets/images'
 const PhoneIntroSection: React.FC = () => {
   return (
     <Section>
-      <Img src={images[0].src} alt="" />
+      <Img src={images[0].src} alt={images[0].alt} />
     </Section>
   )
 }

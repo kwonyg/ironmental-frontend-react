@@ -1,19 +1,19 @@
 import { rootReducer } from 'src/services/rootReducer'
-import { PropsTypes } from 'src/types'
+import { TypedProps } from 'src/types'
 
 export type RootState = ReturnType<typeof rootReducer>
 
 export type ArticlesState = {
   error: Error | null
   loading: boolean
-  articles: PropsTypes.Article[]
+  articles: TypedProps.Article[]
   nextLink: string
 }
 
 export type ArticleState = {
   error: Error | null
   loading: boolean
-  article: PropsTypes.Article
+  article: TypedProps.Article
 }
 
 export type SubscribeState = {
@@ -36,7 +36,7 @@ export type AuthState = {
 export type UserState = {
   error: Error | null
   loading: boolean
-  user: PropsTypes.User | null
+  user: TypedProps.User | null
 }
 
 export type ProfileState = {
@@ -48,7 +48,7 @@ export type ProfileState = {
     username: string
     likesCount: number
     commentCount: number
-    likes: (PropsTypes.Article | PropsTypes.Comment)[]
-    comments: PropsTypes.Comment[]
+    likes: (TypedProps.Article | TypedProps.Comment)[]
+    comments: TypedProps.Comment[]
   }
 }

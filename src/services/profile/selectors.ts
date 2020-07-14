@@ -1,3 +1,3 @@
-import { StateTypes } from 'src/types'
+import { TypedState } from 'src/types'
 
-export const profileSelector = (state: StateTypes.RootState) => state.profile
+export const profileSelector = (state: TypedState.RootState) => state.profile

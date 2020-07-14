@@ -1,4 +1,4 @@
-import { StateTypes, ActionTypes } from 'src/types/'
+import { TypedState, TypedActions } from 'src/types/'
 
 export const initialState = {
   error: null,
@@ -15,8 +15,8 @@ export const initialState = {
 }
 
 export const profileReducer = (
-  state: StateTypes.ProfileState = initialState,
-  action: ActionTypes.Profile
+  state: TypedState.ProfileState = initialState,
+  action: TypedActions.Profile
 ) => {
   switch (action.type) {
     default: {

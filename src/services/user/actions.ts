@@ -1,4 +1,4 @@
-import { PropsTypes } from 'src/types'
+import { TypedProps } from 'src/types'
 
 export const START_USER_LOADING = 'user/START_USER_LOADING' as const
 export const END_USER_LOADING = 'user/END_USER_LOADING' as const
@@ -17,13 +17,13 @@ export const CHECK_LOGGED_IN_FAILURE = 'user/CHECK_LOGGED_IN_FAILURE' as const
 export const actions = {
   startSetUserLoading: () => ({ type: START_USER_LOADING }),
   endSetUserLoading: () => ({ type: END_USER_LOADING }),
-  setUser: (user: PropsTypes.User) => ({ type: SET_USER, payload: { user } }),
+  setUser: (user: TypedProps.User) => ({ type: SET_USER, payload: { user } }),
   logout: () => ({ type: LOGOUT }),
   sendLogin: (code: string) => ({
     type: SEND_LOGIN,
     payload: { code },
   }),
-  sendLoginSuccess: (user: PropsTypes.User) => ({
+  sendLoginSuccess: (user: TypedProps.User) => ({
     type: SEND_LOGIN_SUCCESS,
     payload: { user },
   }),
@@ -35,7 +35,7 @@ export const actions = {
     type: SEND_JOIN,
     payload: { code },
   }),
-  sendJoinSuccess: (user: PropsTypes.User) => ({
+  sendJoinSuccess: (user: TypedProps.User) => ({
     type: SEND_JOIN_SUCCESS,
     payload: { user },
   }),
@@ -44,7 +44,7 @@ export const actions = {
     payload: { error },
   }),
   checkLoggedIn: () => ({ type: CHECK_LOGGED_IN }),
-  checkLoggedInSuccess: (user: PropsTypes.User) => ({
+  checkLoggedInSuccess: (user: TypedProps.User) => ({
     type: CHECK_LOGGED_IN_SUCCESS,
     payload: { user },
   }),

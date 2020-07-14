@@ -1,5 +1,5 @@
-import { StateTypes } from 'src/types'
+import { TypedState } from 'src/types'
 
 export const selectArticle = (
-  state: StateTypes.RootState
-): StateTypes.ArticleState => state.article
+  state: TypedState.RootState
+): TypedState.ArticleState => state.article

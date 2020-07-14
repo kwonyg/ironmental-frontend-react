@@ -1,15 +1,15 @@
 import * as React from 'react'
 import { Result, Button } from 'antd'
-import { PropsTypes } from 'src/types'
+import { TypedProps } from 'src/types'
 import { errorMessage, routePath } from 'src/constants'
 import { routeUtils } from 'src/utils'
 import { useLocation } from 'react-router-dom'
 
 interface LocationState {
-  errorResponseData: PropsTypes.ErrorResponseData
+  errorResponseData: TypedProps.ErrorResponseData
 }
 
-const errorResults: { [key in string | number]: PropsTypes.ErrorInfo } = {
+const errorResults: { [key in string | number]: TypedProps.ErrorInfo } = {
   unknown: {
     status: undefined,
     title: '예기치 못한 오류',

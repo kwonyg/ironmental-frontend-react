@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import { List } from 'antd'
 import { routePath } from 'src/constants'
 import { MessageOutlined, LikeOutlined, LikeTwoTone } from '@ant-design/icons'
-import { PropsTypes } from 'src/types'
+import { TypedProps } from 'src/types'
 import TagLists from 'src/components/TagList'
 
 type ArticleProps = {
   type?: 'article' | 'profile'
-  article: PropsTypes.Article
+  article: TypedProps.Article
 }
 
 const ArticleListItem: React.FC<ArticleProps> = ({

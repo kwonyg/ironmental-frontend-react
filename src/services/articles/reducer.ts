@@ -1,4 +1,4 @@
-import { ActionTypes, StateTypes } from 'src/types'
+import { TypedActions, TypedState } from 'src/types'
 import {
   START_ARTICLES_LOADING,
   END_ARTICLES_LOADING,
@@ -8,7 +8,7 @@ import {
   GET_ARTICLES_SUCCESS,
 } from './actions'
 
-export const initialState: StateTypes.ArticlesState = {
+export const initialState: TypedState.ArticlesState = {
   error: null,
   loading: false,
   articles: [],
@@ -16,8 +16,8 @@ export const initialState: StateTypes.ArticlesState = {
 }
 
 export const articlesReducer = (
-  state: StateTypes.ArticlesState = initialState,
-  action: ActionTypes.Articles
+  state: TypedState.ArticlesState = initialState,
+  action: TypedActions.Articles
 ) => {
   switch (action.type) {
     case GET_ARTICLES_SUCCESS:

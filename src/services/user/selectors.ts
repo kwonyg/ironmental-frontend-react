@@ -1,3 +1,3 @@
-import { StateTypes } from 'src/types'
+import { TypedState } from 'src/types'
 
-export const getLoggedInUser = (state: StateTypes.RootState) => state.user.user
+export const getLoggedInUser = (state: TypedState.RootState) => state.user.user

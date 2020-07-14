@@ -1,4 +1,4 @@
-import { StateTypes, ActionTypes } from 'src/types'
+import { TypedState, TypedActions } from 'src/types'
 import {
   START_SUBSCRIBE_LOADING,
   END_SUBSCRIBE_LOADING,
@@ -6,7 +6,7 @@ import {
   SEND_EMAIL_SUBSCRIBE_SUCCESS,
 } from './actions'
 
-const initialState: StateTypes.SubscribeState = {
+const initialState: TypedState.SubscribeState = {
   error: null,
   loading: false,
   result: {
@@ -15,8 +15,8 @@ const initialState: StateTypes.SubscribeState = {
   },
 }
 export const subscribeReducer = (
-  state: StateTypes.SubscribeState = initialState,
-  action: ActionTypes.Subscribe
+  state: TypedState.SubscribeState = initialState,
+  action: TypedActions.Subscribe
 ) => {
   switch (action.type) {
     case SEND_EMAIL_SUBSCRIBE_SUCCESS: {

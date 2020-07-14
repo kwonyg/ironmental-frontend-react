@@ -1,4 +1,4 @@
-import { StateTypes, ActionTypes } from 'src/types'
+import { TypedState, TypedActions } from 'src/types'
 import {
   START_AUTH_LOADING,
   END_AUTH_LOADING,
@@ -6,15 +6,15 @@ import {
   SEND_AUTH_CONFIRM_SUCCESS,
 } from './actions'
 
-const initialState: StateTypes.AuthState = {
+const initialState: TypedState.AuthState = {
   error: null,
   loading: false,
   result: { message: '' },
 }
 
 export const authReducer = (
-  state: StateTypes.AuthState = initialState,
-  action: ActionTypes.Auth
+  state: TypedState.AuthState = initialState,
+  action: TypedActions.Auth
 ) => {
   switch (action.type) {
     case START_AUTH_LOADING: {
