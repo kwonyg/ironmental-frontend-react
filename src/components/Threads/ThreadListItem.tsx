@@ -6,24 +6,25 @@ import ReactMarkdown from 'react-markdown'
 import 'github-markdown-css'
 
 const ThreadListItem: React.FC = () => {
-  const markDown = `# ironmental-frontend-react
+  const markDown = `가만히 있으세요. 가만히 있으라고 했습니다.`
+  // const markDown = `# ironmental-frontend-react
 
-  아이언멘탈 리뉴얼 프로젝트
+  // 아이언멘탈 리뉴얼 프로젝트
 
-  ## Core External Library
+  // ## Core External Library
 
-  - ant.design
-  - Lottie
-  ## Need API data Doc
+  // - ant.design
+  // - Lottie
+  // ## Need API data Doc
 
-  https://ironmental-story.netlify.app/ powered by storybook
+  // https://ironmental-story.netlify.app/ powered by storybook
 
-  CRA Default README.md
-  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  // CRA Default README.md
+  // This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-  ## Available Scripts
+  // ## Available Scripts
 
-  In the project directory, you can run:`
+  // In the project directory, you can run:`
 
   // FIXME: API 완성되면 리덕스 상태로 빼기
   const [likes, setLikes] = useState(false)

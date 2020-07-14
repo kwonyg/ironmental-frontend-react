@@ -12,25 +12,7 @@ type Props = {
 }
 
 const CommentListItem: React.FC<Props> = ({ type = 'article' }) => {
-  const markDown = `# ironmental-frontend-react
-
-  아이언멘탈 리뉴얼 프로젝트
-
-  ## Core External Library
-
-  - ant.design
-  - Lottie
-
-  ## Need API data Doc
-
-  https://ironmental-story.netlify.app/ powered by storybook
-
-  CRA Default README.md
-  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-  ## Available Scripts
-
-  In the project directory, you can run:`
+  const markDown = `연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? 연애계 관두고 개발자하고 싶은데 어떻게 하면 좋을까요? `
 
   // FIXME: API 완성되면 리덕스 상태로 빼기
   const [likes, setLikes] = useState(false)
