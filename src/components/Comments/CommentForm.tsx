@@ -4,9 +4,11 @@ import { FileMarkdownOutlined, ProfileOutlined } from '@ant-design/icons'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import ErrorMessage from 'src/components/ErrorMessage'
+import MeontionTextField from 'src/components/MeontionTextField'
 
 const { TextArea } = Input
 const { TabPane } = Tabs
+
 const CommentForm: React.FC = () => {
   const [iserror, setIserror] = useState(false)
   const [text, setText] = useState('')
@@ -40,12 +42,16 @@ const CommentForm: React.FC = () => {
         key="1"
       >
         <StyledForm onFinish={onSubmit}>
-          <StyledTextarea
+          <MeontionTextField
+            rows={3}
+            placeholder={'@를 사용하여 유저를 레퍼런스 할 수 있습니다.'}
+          />
+          {/* <StyledTextarea
             iserror={iserror ? 1 : 0}
             value={text}
             onChange={onChange()}
             rows={4}
-          />
+          /> */}
           <InteractionContainer>
             {iserror && <ErrorMessage text={'내용을 입력해주세요.'} />}
             <StyledButton type="primary" htmlType="submit">
@@ -76,6 +82,7 @@ const StyledForm = styled(Form)`
 `
 
 const InteractionContainer = styled.div`
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
 `
@@ -98,7 +105,6 @@ const MarkDownContainer = styled.div`
   border: 1px solid #f0f0f0;
   min-height: 50px;
   padding: 20px;
-
   font-size: 90%;
 `
 

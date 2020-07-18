@@ -1,7 +1,11 @@
-export const createRequestActionTypes = <T>(type: T) => {
-  const SUCCESS = `${type}_SUCCESS`
-  const FAILURE = `${type}_FAILURE`
-  return [type, SUCCESS, FAILURE]
+export const createRequestActionTypes = (type: string) => {
+  /* const SUCCESS = `${type}_SUCCESS`
+  const FAILURE = `${type}_FAILURE` */
+  return {
+    REQUEST: type,
+    SUCCESS: `${type}_SUCCESS`,
+    FAILURE: `${type}_FAILURE`,
+  }
 }
 
 // export function createReducer<S, A>(
