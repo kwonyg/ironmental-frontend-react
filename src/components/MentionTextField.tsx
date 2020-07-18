@@ -12,14 +12,18 @@ type Props = {
   rows?: number
   autoSize?: boolean
   placeholder?: string
+  onChange?: () => void
   // users: User[]
 }
+
 const MentionTextField: React.FC<Props> = ({
   rows = 1,
   autoSize = false,
   placeholder,
+  onChange,
 }) => {
-  const [users, setUsers] = useState<User[]>([
+  // mock
+  const [users] = useState<User[]>([
     { id: 'feaefgwnj', name: '권영근' },
     { id: 'fhmklrtes', name: '권영순' },
     { id: 'fefeawwnj', name: '이승욱' },
@@ -28,7 +32,7 @@ const MentionTextField: React.FC<Props> = ({
   ])
 
   return (
-    <Mentions rows={rows} placeholder={placeholder}>
+    <Mentions rows={rows} placeholder={placeholder} onChange={onChange}>
       {users.map(user => (
         <Option key={user.id} value={user.name}>
           {user.name}

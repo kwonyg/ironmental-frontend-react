@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
-import { Tabs, Input, Button, Form } from 'antd'
+import { Tabs, Button, Form } from 'antd'
 import { FileMarkdownOutlined, ProfileOutlined } from '@ant-design/icons'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import ErrorMessage from 'src/components/ErrorMessage'
-import MeontionTextField from 'src/components/MeontionTextField'
+import MentionTextField from 'src/components/MentionTextField'
 
-const { TextArea } = Input
 const { TabPane } = Tabs
 
 const CommentForm: React.FC = () => {
   const [iserror, setIserror] = useState(false)
+  const [form] = Form.useForm()
   const [text, setText] = useState('')
+
+  const onReset = () => {
+    form.resetFields()
+    setText('')
+  }
 
   const onSubmit = () => {
     if (!text.length) {
@@ -19,15 +24,15 @@ const CommentForm: React.FC = () => {
       return
     }
 
-    setText('')
+    onReset()
   }
 
-  const onChange = () => (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChange = () => {
+    setText(form.getFieldValue('text'))
+
     if (iserror) {
       setIserror(false)
     }
-
-    setText(e.target.value)
   }
 
   return (
@@ -41,17 +46,15 @@ const CommentForm: React.FC = () => {
         }
         key="1"
       >
-        <StyledForm onFinish={onSubmit}>
-          <MeontionTextField
-            rows={3}
-            placeholder={'@를 사용하여 유저를 레퍼런스 할 수 있습니다.'}
-          />
-          {/* <StyledTextarea
-            iserror={iserror ? 1 : 0}
-            value={text}
-            onChange={onChange()}
-            rows={4}
-          /> */}
+        <StyledForm form={form} onFinish={onSubmit}>
+          <StyledFormItem iserror={iserror ? 1 : 0} name="text">
+            <MentionTextField
+              onChange={onChange}
+              rows={3}
+              placeholder={'@를 사용하여 유저를 레퍼런스 할 수 있습니다.'}
+            />
+          </StyledFormItem>
+
           <InteractionContainer>
             {iserror && <ErrorMessage text={'내용을 입력해주세요.'} />}
             <StyledButton type="primary" htmlType="submit">
@@ -81,19 +84,18 @@ const StyledForm = styled(Form)`
   padding: 20px;
 `
 
-const InteractionContainer = styled.div`
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-`
-
-const StyledTextarea = styled(TextArea)<{ iserror: number }>`
-  margin-bottom: 10px;
+const StyledFormItem = styled(Form.Item)<{ iserror: number }>`
+  margin-bottom: 5px;
   ${props => {
     if (props.iserror) {
       return `border: 1px solid red;color: red;`
     }
   }}
+`
+
+const InteractionContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
 
 const StyledButton = styled(Button)`
